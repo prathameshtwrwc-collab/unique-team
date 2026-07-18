@@ -15,7 +15,7 @@ export function WhyUniqueHRQuote() {
       <div className="absolute -top-5 left-7 text-[64px] font-serif leading-none text-gold">
         "
       </div>
-      <p className="text-[17px] font-serif leading-[1.55] text-white/95 lg:text-[18px]">
+      <p className="text-[17px] font-display leading-[1.55] text-white/95 lg:text-[18px]">
         {whyUniqueHRData.quote.text}
       </p>
       <div className="mt-4 h-[2px] w-12 bg-gold/60" />

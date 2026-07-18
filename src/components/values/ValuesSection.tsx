@@ -87,7 +87,7 @@ export function ValuesSection() {
                 {featured.title}
               </h3>
               
-              <p className="mt-4 text-[18px] leading-[1.4] text-white/95 lg:text-[20px]">
+              <p className="mt-4 text-[18px] font-display leading-[1.35] text-white/95 lg:text-[20px]">
                 {featured.summary}
               </p>
               
@@ -119,11 +119,11 @@ export function ValuesSection() {
                 {value.title}
               </h3>
               
-              <p className="mt-3 text-[16px] leading-[1.55] text-ink lg:text-[17px]">
+              <p className="mt-3 text-[16px] font-display leading-[1.4] text-ink lg:text-[17px]">
                 {value.summary}
               </p>
 
-              <p className="mt-3.5 text-[15.5px] leading-[1.55] text-ink lg:text-[16.5px]">
+              <p className="mt-3.5 text-[15.5px] font-display leading-[1.4] text-ink lg:text-[16.5px]">
                 {value.summary}
               </p>
               

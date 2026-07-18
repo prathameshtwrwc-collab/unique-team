@@ -44,7 +44,7 @@ export function ServicePanel({ service, index }: ServicePanelProps) {
           {service.title}
         </h3>
         
-        <p className="text-[16px] font-serif italic leading-snug text-purple transition-colors duration-300 group-hover:text-violet lg:text-[17px]">
+        <p className="text-[16px] font-display italic leading-snug text-purple transition-colors duration-300 group-hover:text-violet lg:text-[17px]">
           {service.campaignLine}
         </p>
         

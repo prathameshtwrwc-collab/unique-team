@@ -27,7 +27,7 @@ export function ComplianceTrustPanel() {
       <div className="flex items-start gap-3">
         <ShieldIcon />
         <div className="flex-1">
-          <p className="text-[18px] font-display leading-[1.35] text-white lg:text-[19px]">
+          <p className="text-[18px] font-serif leading-[1.35] text-white lg:text-[19px]">
             {trust.statement}
           </p>
           

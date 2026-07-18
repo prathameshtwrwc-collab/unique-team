@@ -38,7 +38,7 @@ export function ServicesMobileCarousel() {
 
                 <div className="flex flex-col gap-2.5">
                   <h3 className="text-[24px] font-serif leading-tight text-plum">{service.title}</h3>
-                  <p className="text-[15px] font-display italic leading-snug text-purple">{service.campaignLine}</p>
+                  <p className="text-[15px] font-serif italic leading-snug text-purple">{service.campaignLine}</p>
                   <p className="text-[14px] leading-[1.55] text-ink-soft">{service.description}</p>
                   <div className="mt-2">
                     <ServiceLink href={service.href}>{service.cta}</ServiceLink>

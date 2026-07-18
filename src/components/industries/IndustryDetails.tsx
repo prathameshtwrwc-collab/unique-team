@@ -21,7 +21,7 @@ export function IndustryDetails({ industry }: IndustryDetailsProps) {
           {industry.title}
         </h3>
         
-        <p className="text-[19px] font-display italic leading-snug text-purple lg:text-[21px]">
+        <p className="text-[19px] font-serif italic leading-snug text-purple lg:text-[21px]">
           {industry.campaignLine}
         </p>
         

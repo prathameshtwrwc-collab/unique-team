@@ -178,7 +178,7 @@ export function ProcessJourney() {
       {/* Process steps grid - desktop with stepped rhythm */}
       <div className="relative hidden lg:block">
         {/* Top row: 01-04 with stepped offsets */}
-        <div className="flex justify-between gap-8 pb-[110px] pt-8">
+        <div className="grid grid-cols-4 gap-5 pb-[110px] pt-8">
           {processSteps.slice(0, 4).map((step, i) => (
             <div key={step.id} className={i % 2 === 1 ? "translate-y-[12px]" : ""}>
               <ProcessStep step={step} isActive={activeStep === i} index={i} />
@@ -187,7 +187,7 @@ export function ProcessJourney() {
         </div>
 
         {/* Bottom row: 05-08 with stepped offsets */}
-        <div className="flex justify-between gap-8 pt-8">
+        <div className="grid grid-cols-4 gap-5 pt-8">
           {processSteps.slice(4, 8).map((step, i) => (
             <div key={step.id} className={i % 2 === 0 ? "-translate-y-[10px]" : ""}>
               <ProcessStep step={step} isActive={activeStep === i + 4} index={i + 4} />

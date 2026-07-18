@@ -110,7 +110,7 @@ export function ProcessStep({ step, isActive, index }: ProcessStepProps) {
       whileHover={{ y: -5 }}
       viewport={defaultViewport}
       transition={{ delay: 0.8 + index * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1], type: "spring", stiffness: 150, damping: 15 }}
-      className={`group relative flex w-full min-w-[260px] max-w-[280px] flex-col gap-4 rounded-[16px] border p-6 lg:min-w-[240px] ${
+      className={`group relative flex w-full flex-col gap-4 rounded-[16px] border p-6 ${
         isActive
           ? "border-[rgba(90,45,168,0.32)] bg-[#F1E9F6] shadow-[0_12px_32px_rgba(46,21,87,0.15)]"
           : "border-[rgba(46,21,87,0.12)] bg-white hover:border-[rgba(46,21,87,0.2)] hover:shadow-[0_12px_28px_rgba(46,21,87,0.12)]"

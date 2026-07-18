@@ -64,7 +64,7 @@ export function HeroSection() {
           </div>
 
           {/* right visual — columns 6–12, allowed to overlap slightly */}
-          <div className="relative lg:col-span-6 lg:-ml-8 xl:-ml-14">
+          <div className="relative lg:col-span-6 lg:-ml-2 xl:-ml-6">
             <HeroCollage />
           </div>
         </div>

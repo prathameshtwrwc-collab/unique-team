@@ -202,7 +202,7 @@ export function HeroCollage() {
         variants={fadeUp(1.5, 14, 0.55)}
         initial="hidden"
         animate="visible"
-        className="absolute -left-[1%] top-[9%] z-40 w-[196px] sm:left-[0%] lg:-left-[5%]"
+        className="absolute left-[2%] top-[12%] z-40 w-[196px] sm:left-[4%] lg:left-[6%]"
         style={{ y: reduced ? 0 : yCards }}
       >
         <HeroInfoCard card={talent} />
@@ -213,7 +213,7 @@ export function HeroCollage() {
         variants={fadeUp(1.62, 14, 0.55)}
         initial="hidden"
         animate="visible"
-        className="absolute -right-[1%] top-[46%] z-40 hidden w-[218px] lg:block"
+        className="absolute right-[4%] top-[46%] z-40 hidden w-[218px] lg:block"
         style={{ y: reduced ? 0 : yCards }}
       >
         <HeroInfoCard card={support} />

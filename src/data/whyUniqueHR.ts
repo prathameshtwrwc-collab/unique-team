@@ -12,7 +12,7 @@ export const whyUniqueHRData = {
     text: "We do not simply fill vacancies. We help businesses build teams prepared for what comes next.",
   },
   image: {
-    src: "https://images.pexels.com/photos/9623645/pexels-photo-9623645.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800",
+    src: "/images/why-uniquehr-lead.jpg",
     alt: "Experienced business professional in tailored suit exuding confidence and expertise",
   },
 };

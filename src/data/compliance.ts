@@ -22,7 +22,7 @@ export const complianceData = {
   },
   cta: { label: "Explore Compliance Support", href: "#services/payroll-compliance" },
   image: {
-    src: "https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=700",
+    src: "/images/compliance-docs.jpg",
     alt: "Professional reviewing compliance documents and organised records at modern desk",
   },
 };

@@ -6,7 +6,6 @@ import { fadeUp, lineReveal, defaultViewport, headlineViewport } from "../../lib
 export function ValuesSection() {
   const featured = values.find((v) => v.size === "featured");
   const medium = values.filter((v) => v.size === "medium");
-  const compact = values.filter((v) => v.size === "compact");
 
   return (
     <section
@@ -88,7 +87,7 @@ export function ValuesSection() {
                 {featured.title}
               </h3>
               
-              <p className="mt-4 text-[18px] font-serif leading-[1.4] text-white/95 lg:text-[20px]">
+              <p className="mt-4 text-[18px] leading-[1.4] text-white/95 lg:text-[20px]">
                 {featured.summary}
               </p>
               
@@ -120,37 +119,11 @@ export function ValuesSection() {
                 {value.title}
               </h3>
               
-              <p className="mt-3 text-[16px] font-serif leading-[1.4] text-ink lg:text-[17px]">
+              <p className="mt-3 text-[16px] leading-[1.55] text-ink lg:text-[17px]">
                 {value.summary}
               </p>
-              
-              <p className="mt-4 text-[14px] leading-[1.55] text-ink-soft lg:text-[15px]">
-                {value.detail}
-              </p>
-            </motion.article>
-          ))}
 
-          {/* Compact cards - 3 cards span 4 columns each */}
-          {compact.map((value, i) => (
-            <motion.article
-              key={value.id}
-              variants={fadeUp(1.4 + i * 0.1, 18, 0.6)}
-              initial="hidden"
-              whileInView="visible"
-              viewport={defaultViewport}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-[16px] border border-[rgba(46,21,87,0.12)] bg-white p-7 shadow-[0_10px_28px_rgba(46,21,87,0.1)] lg:col-span-4 lg:p-8"
-            >
-              <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-gold">
-                {value.number}
-              </span>
-              
-              <h3 className="mt-4 text-[24px] font-serif leading-[1.2] tracking-[-0.01em] text-plum lg:text-[26px]">
-                {value.title}
-              </h3>
-              
-              <p className="mt-3.5 text-[15.5px] font-serif leading-[1.4] text-ink lg:text-[16.5px]">
+              <p className="mt-3.5 text-[15.5px] leading-[1.55] text-ink lg:text-[16.5px]">
                 {value.summary}
               </p>
               

@@ -15,7 +15,7 @@ export const finalCTAData = {
   },
   brandLine: "People placed with purpose.",
   image: {
-    src: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1200",
+    src: "/images/cta-meeting.jpg",
     alt: "HR manager presenting staffing plan to collaborative team reviewing workforce requirements",
   },
   caption: "People Placed with Purpose",

@@ -40,7 +40,7 @@ export function ContactIntro() {
         <Eyebrow>{eyebrow}</Eyebrow>
       </motion.div>
 
-      <h2 className="mt-5 font-serif text-[clamp(3rem,4.8vw,5.5rem)] leading-[0.94] tracking-[-0.04em] text-plum lg:mt-6">
+      <h2 className="mt-5 font-serif text-[clamp(2.6rem,4.5vw,4rem)] leading-[1.04] tracking-[-0.015em] text-plum lg:mt-6">
         <span className="block pb-[0.06em]">
           <motion.span className="block" variants={lineReveal(0.3)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
             {headline.lineOne}

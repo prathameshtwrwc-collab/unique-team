@@ -36,7 +36,7 @@ export function ValuesSection() {
             <Eyebrow>{valuesData.eyebrow}</Eyebrow>
           </motion.div>
 
-          <h2 className="mt-5 font-serif text-[clamp(3rem,5vw,5rem)] leading-[0.95] tracking-[-0.045em] text-plum lg:mt-6">
+          <h2 className="mt-5 font-serif text-[clamp(2.4rem,4.5vw,4.2rem)] leading-[1.04] tracking-[-0.015em] text-plum lg:mt-6">
             <span className="block pb-[0.04em]">
               <motion.span className="block" variants={lineReveal(0.2)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
                 Professional in process.

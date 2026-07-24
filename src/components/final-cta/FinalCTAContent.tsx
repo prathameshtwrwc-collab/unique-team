@@ -43,7 +43,7 @@ export function FinalCTAContent() {
         </span>
       </motion.div>
 
-      <h2 className="mt-6 font-serif text-[clamp(2.8rem,5vw,4.8rem)] leading-[1.04] tracking-[-0.015em] text-white lg:mt-7">
+      <h2 className="mt-6 font-serif text-pretty text-[clamp(2.4rem,4.5vw,4rem)] leading-[1.06] tracking-[-0.012em] text-white lg:mt-7">
         <span className="block pb-[0.06em]">
           <motion.span className="block" variants={lineReveal(0.35)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
             {headline.partOne}{" "}

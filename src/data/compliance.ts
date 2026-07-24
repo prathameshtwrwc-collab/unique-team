@@ -20,7 +20,7 @@ export const complianceData = {
     supportLine: "Clear documentation and timely coordination help reduce avoidable compliance risk.",
     microPoints: ["Policy aligned", "Documented", "Audit ready"],
   },
-  cta: { label: "Explore Compliance Support", href: "#services/payroll-compliance" },
+  cta: { label: "Explore Compliance Support", href: "#services" },
   image: {
     src: "/images/Statutory.png",
     alt: "Statutory and compliance support — organised documentation with professional oversight",

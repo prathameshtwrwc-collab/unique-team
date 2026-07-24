@@ -25,18 +25,18 @@ export const footerData = {
         { label: "Services", href: "#services" },
         { label: "Industries", href: "#industries" },
         { label: "Our Process", href: "#process" },
-        { label: "Careers", href: "#careers" },
+        { label: "Careers", href: "#contact" },
         { label: "Contact", href: "#contact" },
       ],
     },
     {
       title: "Services",
       links: [
-        { label: "Staffing & Recruitment", href: "#services/staffing-recruitment" },
-        { label: "HR Advisory", href: "#services/hr-advisory" },
-        { label: "Payroll & Compliance", href: "#services/payroll-compliance" },
-        { label: "Training & Development", href: "#services/training-development" },
-        { label: "Migrant Workforce Solutions", href: "#services/migrant-workforce" },
+        { label: "Staffing & Recruitment", href: "#services" },
+        { label: "HR Advisory", href: "#services" },
+        { label: "Payroll & Compliance", href: "#services" },
+        { label: "Training & Development", href: "#services" },
+        { label: "Migrant Workforce Solutions", href: "#services" },
       ],
     },
     {
@@ -53,9 +53,9 @@ export const footerData = {
     },
   ],
   social: [
-    { label: "LinkedIn", href: "[PLACEHOLDER]", ariaLabel: "Visit UniqueHR on LinkedIn" },
-    { label: "Instagram", href: "[PLACEHOLDER]", ariaLabel: "Visit UniqueHR on Instagram" },
-    { label: "Facebook", href: "[PLACEHOLDER]", ariaLabel: "Visit UniqueHR on Facebook" },
+    { label: "LinkedIn", href: "#", ariaLabel: "Visit UniqueHR on LinkedIn" },
+    { label: "Instagram", href: "#", ariaLabel: "Visit UniqueHR on Instagram" },
+    { label: "Facebook", href: "#", ariaLabel: "Visit UniqueHR on Facebook" },
   ],
   closingLine: {
     partOne: "Your growth.",
@@ -66,9 +66,9 @@ export const footerData = {
   legal: {
     copyright: "© 2026 UniqueHR. All rights reserved.",
     links: [
-      { label: "Privacy Policy", href: "#privacy-policy" },
-      { label: "Terms & Conditions", href: "#terms-and-conditions" },
-      { label: "Sitemap", href: "#sitemap" },
+      { label: "Privacy Policy", href: "#contact" },
+      { label: "Terms & Conditions", href: "#contact" },
+      { label: "Sitemap", href: "#contact" },
     ],
     tagline: "People placed with purpose.",
   },

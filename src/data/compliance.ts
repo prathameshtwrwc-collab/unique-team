@@ -22,8 +22,8 @@ export const complianceData = {
   },
   cta: { label: "Explore Compliance Support", href: "#services/payroll-compliance" },
   image: {
-    src: "/images/compliance-docs.jpg",
-    alt: "Professional reviewing compliance documents and organised records at modern desk",
+    src: "/images/Statutory.png",
+    alt: "Statutory and compliance support — organised documentation with professional oversight",
   },
 };
 

@@ -32,7 +32,7 @@ export function Footer() {
       {/* Faint oversized "U" monogram at 3% opacity */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -left-12 bottom-[15%] select-none font-serif text-[38rem] leading-none text-white/[0.03]"
+        className="pointer-events-none absolute -left-12 bottom-[15%] hidden select-none font-serif text-[38rem] leading-none text-white/[0.03] lg:block"
       >
         U
       </span>
@@ -40,7 +40,7 @@ export function Footer() {
       <div
         className="container-shell relative"
         style={{
-          paddingTop: "clamp(80px, 7vw, 115px)",
+          paddingTop: "clamp(50px, 5vw, 80px)",
           paddingBottom: "36px",
         }}
       >

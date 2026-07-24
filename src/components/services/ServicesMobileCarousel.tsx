@@ -23,7 +23,7 @@ export function ServicesMobileCarousel() {
         className="relative overflow-x-auto pb-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         onScroll={handleScroll}
       >
-        <div className="flex snap-x snap-mandatory gap-6 px-1">
+        <div className="flex snap-x snap-mandatory gap-6 px-4 sm:px-6">
           {services.map((service, i) => (
             <div key={service.number} className="w-[85vw] shrink-0 snap-center sm:w-[75vw]">
               <div className="flex flex-col gap-4">

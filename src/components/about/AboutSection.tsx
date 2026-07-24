@@ -21,7 +21,7 @@ export function AboutSection() {
         {/* Main 12-column grid: collage left, content right */}
         <div
           className="grid grid-cols-1 items-start gap-y-16 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-0"
-          style={{ paddingTop: "clamp(120px, 10vw, 170px)", paddingBottom: "clamp(110px, 10vw, 160px)" }}
+          style={{ paddingTop: "clamp(40px, 4vw, 70px)", paddingBottom: "clamp(70px, 7vw, 100px)" }}
         >
           <div className="lg:col-span-6">
             <AboutCollage />

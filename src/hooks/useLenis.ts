@@ -1,13 +1,6 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-/**
- * Initialises Lenis smooth scrolling.
- * - Responsive (short duration, no scroll hijacking)
- * - Keyboard / trackpad remain native
- * - Respects prefers-reduced-motion
- * - Cleans up on unmount
- */
 export function useLenis() {
   useEffect(() => {
     const prefersReduced = window.matchMedia(
@@ -16,9 +9,9 @@ export function useLenis() {
     if (prefersReduced) return;
 
     const lenis = new Lenis({
-      duration: 1.05,
+      duration: 0.95,
       smoothWheel: true,
-      touchMultiplier: 1.4,
+      touchMultiplier: 1.3,
       anchors: { offset: -90 },
     });
 

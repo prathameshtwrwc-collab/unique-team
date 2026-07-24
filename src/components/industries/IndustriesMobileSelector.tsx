@@ -14,7 +14,7 @@ export function IndustriesMobileSelector({ activeIndustry, onSelectIndustry }: I
     <div className="flex flex-col gap-8 lg:hidden">
       {/* Horizontal industry selector */}
       <div className="overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="flex snap-x snap-mandatory gap-3 px-1">
+        <div className="flex snap-x snap-mandatory gap-3 px-4">
           {industries.map((industry) => (
             <button
               key={industry.id}
@@ -36,9 +36,7 @@ export function IndustriesMobileSelector({ activeIndustry, onSelectIndustry }: I
 
       {/* Central visual */}
       <div className="flex justify-center">
-        <div className="w-[85vw] max-w-[400px]">
-          <IndustryCentralVisual industry={active} />
-        </div>
+        <IndustryCentralVisual industry={active} />
       </div>
 
       {/* Industry details */}

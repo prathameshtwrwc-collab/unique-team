@@ -48,8 +48,8 @@ export function IndustriesSection() {
       <div
         className="container-shell relative"
         style={{
-          paddingTop: "clamp(120px, 10vw, 170px)",
-          paddingBottom: "clamp(80px, 7vw, 120px)",
+          paddingTop: "clamp(70px, 7vw, 100px)",
+          paddingBottom: "clamp(50px, 5vw, 80px)",
         }}
       >
         {/* Desktop layout */}

@@ -11,9 +11,10 @@ export interface FooterLinkGroupData {
 export const footerData = {
   brand: {
     statement: "People placed with purpose. We help businesses hire, onboard and manage professionals who fit the work, the culture and the ambition behind it.",
-    phone: "+1 (234) 567-890",
-    email: "info@uniquehr.com",
-    office: "Mumbai, India",
+    phone: "+91 8422976666",
+    email: "account@uniqueteam.in",
+    website: "www.uniqueteam.in",
+    office: "FA 18 First Floor Lake City Mall Kapurbawadi Junction Thane(W) 400607 Mumbai, India",
   },
   linkGroups: [
     {

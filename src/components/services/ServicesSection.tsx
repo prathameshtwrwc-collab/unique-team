@@ -23,8 +23,8 @@ export function ServicesSection() {
       <div
         className="container-shell relative"
         style={{
-          paddingTop: "clamp(120px, 10vw, 170px)",
-          paddingBottom: "clamp(120px, 10vw, 170px)",
+          paddingTop: "clamp(70px, 7vw, 100px)",
+          paddingBottom: "clamp(70px, 7vw, 100px)",
         }}
       >
         <ServicesIntro />

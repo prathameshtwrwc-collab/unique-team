@@ -5,10 +5,10 @@ export function Eyebrow({ children }: { children: string }) {
     <p className="flex items-center gap-3">
       <span
         aria-hidden
-        className="h-px w-9 bg-gradient-to-r from-gold to-gold-soft"
+        className="h-px w-8 bg-gradient-to-r from-gold to-gold-soft"
       />
       <PeopleIcon className="shrink-0 text-gold" />
-      <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-gold-deep">
+      <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-gold-deep lg:text-[12px]">
         {children}
       </span>
     </p>

@@ -8,42 +8,19 @@ import { MobileMenu } from "./MobileMenu";
 
 function Logo() {
   return (
-    <a
-      href="#home"
-      aria-label="UniqueHR — home"
-      className="flex items-center gap-4"
-    >
-      {/* UH monogram */}
-      <span className="relative flex h-[42px] w-[42px] items-center justify-center rounded-[13px] bg-plum shadow-[0_8px_20px_rgba(46,21,87,0.25)]">
-        <svg viewBox="0 0 42 42" width="42" height="42" aria-hidden>
-          <text
-            x="11"
-            y="29"
-            fontFamily="'Instrument Serif', Georgia, serif"
-            fontSize="24"
-            fill="#FBF8F3"
-          >
-            U
-          </text>
-          <text
-            x="21"
-            y="33"
-            fontFamily="'Instrument Serif', Georgia, serif"
-            fontSize="19"
-            fontStyle="italic"
-            fill="#E9C77F"
-          >
-            H
-          </text>
-          <circle cx="33.5" cy="11" r="2" fill="#D6A03E" />
-        </svg>
-      </span>
-      <span className="flex flex-col leading-none">
-        <span className="text-[21px] font-bold tracking-[-0.02em] text-plum">
-          Unique<span className="text-gold">HR</span>
+    <a href="#home" aria-label="UniqueHR — home" className="flex items-center gap-3">
+      <img
+        src="/images/logo.png"
+        alt="UniqueHR"
+        className="h-[56px] w-auto"
+        fetchPriority="high"
+      />
+      <span className="flex flex-col leading-tight">
+        <span className="text-[17px] font-bold tracking-[-0.01em] text-plum">
+          Unique HR Team
         </span>
-        <span className="mt-0.5 text-[10.5px] font-medium uppercase tracking-[0.24em] text-[rgba(104,97,110,0.85)]">
-          People · Purpose
+        <span className="text-[12px] font-medium text-ink-muted">
+          Solutions Pvt. Ltd.
         </span>
       </span>
     </a>

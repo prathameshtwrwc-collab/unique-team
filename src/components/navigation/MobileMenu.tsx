@@ -46,9 +46,21 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             className="fixed inset-x-3 top-3 z-50 rounded-[22px] border border-[rgba(46,21,87,0.12)] bg-cream p-6 shadow-[0_30px_80px_rgba(46,21,87,0.25)] lg:hidden"
           >
             <div className="mb-5 flex items-center justify-between">
-              <span className="text-[18px] font-bold text-plum">
-                Unique<span className="text-gold">HR</span>
-              </span>
+              <div className="flex items-center gap-2.5">
+                <img
+                  src="/images/logo.png"
+                  alt="UniqueHR"
+                  className="h-[44px] w-auto"
+                />
+                <span className="flex flex-col leading-tight">
+                  <span className="text-[16px] font-bold tracking-[-0.01em] text-plum">
+                    Unique HR Team
+                  </span>
+                  <span className="text-[11px] font-medium text-ink-muted">
+                    Solutions Pvt. Ltd.
+                  </span>
+                </span>
+              </div>
               <button
                 type="button"
                 onClick={onClose}

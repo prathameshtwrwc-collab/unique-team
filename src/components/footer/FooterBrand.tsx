@@ -5,24 +5,18 @@ import { fadeUp, defaultViewport } from "../../lib/animations";
 
 function Logo() {
   return (
-    <div className="flex items-center gap-4">
-      <span className="relative flex h-[46px] w-[46px] items-center justify-center rounded-[14px] bg-white/10 shadow-[0_8px_20px_rgba(0,0,0,0.2)] ring-1 ring-white/20">
-        <svg viewBox="0 0 46 46" width="46" height="46" aria-hidden>
-          <text x="12" y="32" fontFamily="'Instrument Serif', Georgia, serif" fontSize="26" fill="#FBF8F3">
-            U
-          </text>
-          <text x="23" y="36" fontFamily="'Instrument Serif', Georgia, serif" fontSize="21" fontStyle="italic" fill="#E9C77F">
-            H
-          </text>
-          <circle cx="36" cy="12" r="2.2" fill="#D6A03E" />
-        </svg>
-      </span>
-      <span className="flex flex-col leading-none">
-        <span className="text-[23px] font-bold tracking-[-0.02em] text-white">
-          Unique<span className="text-gold-soft">HR</span>
+    <div className="flex items-center gap-3">
+      <img
+        src="/images/logo.png"
+        alt="UniqueHR"
+        className="h-[60px] w-auto brightness-0 invert"
+      />
+      <span className="flex flex-col leading-tight">
+        <span className="text-[18px] font-bold tracking-[-0.01em] text-white">
+          Unique HR Team
         </span>
-        <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.24em] text-white/75">
-          People · Purpose
+        <span className="text-[13px] font-medium text-white/70">
+          Solutions Pvt. Ltd.
         </span>
       </span>
     </div>
@@ -55,7 +49,8 @@ export function FooterBrand() {
       >
         <p>{footerData.brand.phone}</p>
         <p>{footerData.brand.email}</p>
-        <p>{footerData.brand.office}</p>
+        <p>{footerData.brand.website}</p>
+        <p className="text-[14px] leading-[1.5] text-white/70">{footerData.brand.office}</p>
       </motion.div>
 
       <FooterSocialLinks />

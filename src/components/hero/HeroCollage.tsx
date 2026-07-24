@@ -35,9 +35,9 @@ export function HeroCollage() {
     offset: ["start start", "end start"],
   });
 
-  const yLead = useTransform(scrollYProgress, [0, 1], [0, 16]);
-  const yBack = useTransform(scrollYProgress, [0, 1], [0, 26]);
-  const yCards = useTransform(scrollYProgress, [0, 1], [0, 10]);
+  const yLead = useTransform(scrollYProgress, [0, 1], [0, 12]);
+  const yBack = useTransform(scrollYProgress, [0, 1], [0, 18]);
+  const yCards = useTransform(scrollYProgress, [0, 1], [0, 8]);
 
   const [talent, support, compliance] = infoCards;
 
@@ -46,9 +46,8 @@ export function HeroCollage() {
       ref={ref}
       className="relative mx-auto mt-2 h-[480px] w-full max-w-[520px] sm:h-[560px] lg:mt-0 lg:h-[640px] lg:max-w-none"
     >
-      {/* 0 — soft purple rear shape (adds depth behind the lead) */}
       <motion.div
-        variants={scaleIn(0.45)}
+        variants={scaleIn(0.35)}
         initial="hidden"
         animate="visible"
         aria-hidden
@@ -58,9 +57,8 @@ export function HeroCollage() {
           borderRadius: "54% 46% 42% 58% / 46% 54% 46% 54%",
         }}
       />
-      {/* 1 — soft lilac echo panel, back-most */}
       <motion.div
-        variants={scaleIn(0.5)}
+        variants={scaleIn(0.4)}
         initial="hidden"
         animate="visible"
         aria-hidden
@@ -71,9 +69,8 @@ export function HeroCollage() {
         }}
       />
 
-      {/* 2 — workplace image, upper right (brighter) */}
       <motion.div
-        variants={scaleIn(0.8)}
+        variants={scaleIn(0.6)}
         initial="hidden"
         animate="visible"
         aria-hidden={false}
@@ -89,24 +86,19 @@ export function HeroCollage() {
           loading="lazy"
           className="h-full w-full object-cover brightness-[1.18] contrast-[1.08]"
         />
-        <div
-          aria-hidden
-          className="absolute inset-0 bg-[#2E1557]/25 mix-blend-multiply"
-        />
+        <div aria-hidden className="absolute inset-0 bg-[#2E1557]/25 mix-blend-multiply" />
       </motion.div>
 
-      {/* translucent lilac accent, right side */}
       <motion.div
-        variants={scaleIn(0.95)}
+        variants={scaleIn(0.7)}
         initial="hidden"
         animate="visible"
         aria-hidden
         className="absolute right-[6%] top-[30%] hidden h-[16%] w-[22%] rounded-[26px] bg-lilac/60 md:block"
       />
 
-      {/* dot grids (two, restrained) */}
       <motion.div
-        variants={scaleIn(1.1)}
+        variants={scaleIn(0.8)}
         initial="hidden"
         animate="visible"
         aria-hidden
@@ -115,7 +107,7 @@ export function HeroCollage() {
         <DotGrid id="dots-a" />
       </motion.div>
       <motion.div
-        variants={scaleIn(1.2)}
+        variants={scaleIn(0.85)}
         initial="hidden"
         animate="visible"
         aria-hidden
@@ -124,9 +116,8 @@ export function HeroCollage() {
         <DotGrid id="dots-b" className="opacity-70" />
       </motion.div>
 
-      {/* 3 — lead portrait inside organic purple arch (z-index raised) */}
       <motion.div
-        variants={clipReveal(0.55)}
+        variants={clipReveal(0.45)}
         initial="hidden"
         animate="visible"
         className="absolute left-1/2 top-[2%] z-10 h-[86%] w-[88%] -translate-x-1/2 overflow-hidden shadow-[0_30px_80px_rgba(46,21,87,0.28)] sm:w-[72%] lg:left-[16%] lg:w-[62%] lg:translate-x-0"
@@ -142,16 +133,14 @@ export function HeroCollage() {
           fetchPriority="high"
           className="h-full w-full object-cover object-[50%_18%]"
         />
-        {/* subtle grade to blend with the shape gradient */}
         <div
           aria-hidden
           className="absolute inset-0 bg-[linear-gradient(200deg,rgba(169,138,213,0.12)_0%,rgba(46,21,87,0.18)_100%)] mix-blend-multiply"
         />
       </motion.div>
 
-      {/* 4 — lower-right meeting image (moved up/right, less height) */}
       <motion.div
-        variants={scaleIn(1.0)}
+        variants={scaleIn(0.7)}
         initial="hidden"
         animate="visible"
         className="absolute -right-[1%] bottom-[14%] z-5 hidden h-[22%] w-[34%] overflow-hidden rounded-[26px] border-4 border-cream shadow-[0_20px_60px_rgba(46,21,87,0.2)] md:block"
@@ -164,9 +153,8 @@ export function HeroCollage() {
         />
       </motion.div>
 
-      {/* 5 — lower-left collaboration image (moved up/right) */}
       <motion.div
-        variants={scaleIn(1.1)}
+        variants={scaleIn(0.8)}
         initial="hidden"
         animate="visible"
         className="absolute -left-[1%] bottom-[8%] z-5 hidden h-[18%] w-[38%] overflow-hidden border-4 border-cream shadow-[0_20px_60px_rgba(46,21,87,0.2)] sm:h-[20%] sm:w-[34%]"
@@ -180,9 +168,8 @@ export function HeroCollage() {
         />
       </motion.div>
 
-      {/* small gold accent badge on the arch edge */}
       <motion.div
-        variants={scaleIn(1.35)}
+        variants={scaleIn(0.95)}
         initial="hidden"
         animate="visible"
         aria-hidden
@@ -194,12 +181,10 @@ export function HeroCollage() {
         </svg>
       </motion.div>
 
-      {/* 6 — gold trajectory line */}
       <GoldTrajectory className="pointer-events-none absolute inset-0 z-30 h-full w-full" />
 
-      {/* 7 — floating information cards */}
       <motion.div
-        variants={fadeUp(1.5, 14, 0.55)}
+        variants={fadeUp(1.1, 12, 0.5)}
         initial="hidden"
         animate="visible"
         className="absolute left-[2%] top-[12%] z-40 w-[196px] sm:left-[4%] lg:left-[6%]"
@@ -208,9 +193,8 @@ export function HeroCollage() {
         <HeroInfoCard card={talent} />
       </motion.div>
 
-      {/* support card - hidden on mobile/tablet */}
       <motion.div
-        variants={fadeUp(1.62, 14, 0.55)}
+        variants={fadeUp(1.2, 12, 0.5)}
         initial="hidden"
         animate="visible"
         className="absolute right-[4%] top-[46%] z-40 hidden w-[218px] lg:block"
@@ -220,7 +204,7 @@ export function HeroCollage() {
       </motion.div>
 
       <motion.div
-        variants={fadeUp(1.74, 14, 0.55)}
+        variants={fadeUp(1.3, 12, 0.5)}
         initial="hidden"
         animate="visible"
         className="absolute bottom-[18%] left-[52%] z-40 hidden w-[238px] lg:block lg:left-[48%]"

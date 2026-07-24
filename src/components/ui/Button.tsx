@@ -21,18 +21,18 @@ export function Button({
     <a
       href={href}
       className={cn(
-        "group inline-flex h-[54px] items-center justify-center gap-2.5 rounded-[14px] px-7 text-[15.5px] font-semibold transition-all duration-300 will-change-transform",
+        "group inline-flex h-[52px] items-center justify-center gap-2.5 rounded-[13px] px-7 text-[15px] font-semibold transition-all duration-300 will-change-transform",
         isPrimary
-          ? "bg-purple text-white shadow-[0_14px_30px_rgba(90,45,168,0.28)] hover:-translate-y-[2px] hover:bg-purple-deep hover:shadow-[0_18px_38px_rgba(90,45,168,0.36)]"
-          : "border border-purple bg-[#FFFDF9] text-plum hover:border-purple-deep hover:bg-[#F1E9F6]",
+          ? "bg-purple text-white shadow-[0_12px_28px_rgba(90,45,168,0.28)] hover:-translate-y-[1px] hover:bg-purple-deep hover:shadow-[0_16px_36px_rgba(90,45,168,0.36)] active:scale-[0.98]"
+          : "border border-purple/30 bg-[#FFFDF9] text-plum hover:border-purple hover:bg-[#F1E9F6]",
         className
       )}
     >
       <span>{children}</span>
       {isPrimary ? (
-        <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-[5px]" />
+        <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-[4px]" />
       ) : (
-        <CompassIcon className="text-purple transition-transform duration-300 group-hover:translate-x-[3px] group-hover:-translate-y-[3px]" />
+        <CompassIcon className="text-purple transition-transform duration-300 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" />
       )}
     </a>
   );

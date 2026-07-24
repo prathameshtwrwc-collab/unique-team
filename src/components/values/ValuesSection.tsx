@@ -13,7 +13,6 @@ export function ValuesSection() {
       aria-label="What Guides Us"
       className="relative overflow-hidden bg-[#F7F2F8]"
     >
-      {/* Subtle dot grid */}
       <div aria-hidden className="pointer-events-none absolute left-[8%] top-[12%] opacity-20">
         <svg width="64" height="64">
           <defs>
@@ -28,106 +27,98 @@ export function ValuesSection() {
       <div
         className="container-shell relative"
         style={{
-          paddingTop: "clamp(120px, 10vw, 170px)",
-          paddingBottom: "clamp(100px, 9vw, 140px)",
+          paddingTop: "clamp(60px, 6vw, 90px)",
+          paddingBottom: "clamp(50px, 5vw, 80px)",
         }}
       >
-        {/* Intro */}
         <div className="max-w-[720px]">
-          <motion.div variants={fadeUp(0.2, 14, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+          <motion.div variants={fadeUp(0.1, 10, 0.35)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
             <Eyebrow>{valuesData.eyebrow}</Eyebrow>
           </motion.div>
 
-          <h2 className="mt-6 font-serif text-[clamp(3.5rem,5.5vw,5.5rem)] leading-[0.95] tracking-[-0.045em] text-plum lg:mt-7">
-            <span className="block pb-[0.06em]">
-              <motion.span className="block" variants={lineReveal(0.4)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
+          <h2 className="mt-5 font-serif text-[clamp(3rem,5vw,5rem)] leading-[0.95] tracking-[-0.045em] text-plum lg:mt-6">
+            <span className="block pb-[0.04em]">
+              <motion.span className="block" variants={lineReveal(0.2)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
                 Professional in process.
               </motion.span>
             </span>
-            <span className="block pb-[0.08em]">
-              <motion.span className="block" variants={lineReveal(0.55)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
+            <span className="block pb-[0.06em]">
+              <motion.span className="block" variants={lineReveal(0.3)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
                 Human in approach.
               </motion.span>
             </span>
           </h2>
 
           <motion.p
-            variants={fadeUp(0.8, 16, 0.6)}
+            variants={fadeUp(0.45, 10, 0.4)}
             initial="hidden"
             whileInView="visible"
             viewport={defaultViewport}
-            className="mt-7 text-[17px] leading-[1.65] text-ink-soft lg:mt-8 lg:text-[18px]"
+            className="mt-5 text-[16px] leading-[1.65] text-ink-soft lg:mt-6 lg:text-[17px]"
           >
             {valuesData.supportingCopy}
           </motion.p>
         </div>
 
-        {/* Values grid */}
-        <div className="mt-8 grid gap-7 lg:mt-10 lg:grid-cols-12 lg:gap-9">
-          {/* Featured card - spans 7 columns */}
+        <div className="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-12 lg:gap-8">
           {featured && (
             <motion.article
-              variants={fadeUp(1.0, 20, 0.7)}
+              variants={fadeUp(0.55, 16, 0.5)}
               initial="hidden"
               whileInView="visible"
               viewport={defaultViewport}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.3 }}
-              className="relative overflow-hidden rounded-[20px] p-8 shadow-[0_24px_60px_rgba(46,21,87,0.28)] lg:col-span-7 lg:p-10 lg:min-h-[340px]"
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.2 }}
+              className="relative overflow-hidden rounded-[20px] p-8 shadow-[0_20px_50px_rgba(46,21,87,0.25)] lg:col-span-7 lg:p-10 lg:min-h-[320px]"
               style={{ background: "linear-gradient(145deg, #2E1557 0%, #4B238C 100%)" }}
             >
               <div className="flex items-baseline gap-3">
-                <span className="text-[12px] font-bold uppercase tracking-[0.16em] text-gold">
+                <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-gold">
                   {featured.number}
                 </span>
                 <div className="h-px w-10 bg-gold/50" />
               </div>
-              
-              <h3 className="mt-5 text-[32px] font-serif leading-[1.15] tracking-[-0.02em] text-white lg:text-[36px]">
+
+              <h3 className="mt-4 text-[30px] font-serif leading-[1.15] tracking-[-0.02em] text-white lg:text-[34px]">
                 {featured.title}
               </h3>
-              
-              <p className="mt-4 text-[18px] font-serif leading-[1.35] text-white/95 lg:text-[20px]">
+
+              <p className="mt-4 text-[17px] font-serif leading-[1.35] text-white/95 lg:text-[19px]">
                 {featured.summary}
               </p>
-              
-              <p className="mt-5 text-[15px] leading-[1.6] text-white/85 lg:text-[16px]">
+
+              <p className="mt-4 text-[14px] leading-[1.6] text-white/85 lg:text-[15px]">
                 {featured.detail}
               </p>
-              
-              <div className="mt-6 h-[2px] w-16 bg-gold/60" />
+
+              <div className="mt-5 h-[2px] w-16 bg-gold/60" />
             </motion.article>
           )}
 
-          {/* Medium cards - each spans 5 columns on first row, then move to new row */}
           {medium.map((value, i) => (
             <motion.article
               key={value.id}
-              variants={fadeUp(1.2 + i * 0.1, 20, 0.7)}
+              variants={fadeUp(0.65 + i * 0.08, 16, 0.5)}
               initial="hidden"
               whileInView="visible"
               viewport={defaultViewport}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.3 }}
-              className="rounded-[18px] border border-[rgba(46,21,87,0.1)] bg-lilac-pale p-7 shadow-[0_12px_32px_rgba(46,21,87,0.1)] lg:col-span-5 lg:p-8"
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.2 }}
+              className="rounded-[18px] border border-[rgba(46,21,87,0.1)] bg-lilac-pale p-7 shadow-[0_10px_28px_rgba(46,21,87,0.08)] lg:col-span-5 lg:p-8"
             >
               <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-gold">
                 {value.number}
               </span>
-              
-              <h3 className="mt-4 text-[26px] font-serif leading-[1.2] tracking-[-0.01em] text-plum lg:text-[28px]">
+
+              <h3 className="mt-4 text-[24px] font-serif leading-[1.2] tracking-[-0.01em] text-plum lg:text-[26px]">
                 {value.title}
               </h3>
-              
-              <p className="mt-3 text-[16px] font-serif leading-[1.4] text-ink lg:text-[17px]">
+
+              <p className="mt-3 text-[15px] leading-[1.4] text-ink lg:text-[16px]">
                 {value.summary}
               </p>
 
-              <p className="mt-3.5 text-[15.5px] font-serif leading-[1.4] text-ink lg:text-[16.5px]">
-                {value.summary}
-              </p>
-              
-              <p className="mt-3.5 text-[14.5px] leading-[1.55] text-ink-soft">
+              <p className="mt-3 text-[14px] leading-[1.55] text-ink-soft">
                 {value.detail}
               </p>
             </motion.article>

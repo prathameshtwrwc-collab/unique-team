@@ -7,9 +7,10 @@ export const contactData = {
   supportingCopy: "Share a few details about the roles and workforce support you need. Our team will review the requirement and help identify the right next step.",
   contactIntro: "Prefer to speak directly? Reach our team using the contact details below.",
   details: {
-    phone: { label: "Phone", value: "+1 (234) 567-890", href: "tel:+1234567890" },
-    email: { label: "Email", value: "info@uniquehr.com", href: "mailto:info@uniquehr.com" },
-    office: { label: "Office", value: "Mumbai, India", href: "#" },
+    phone: { label: "Phone", value: "+91 8422976666", href: "tel:+918422976666" },
+    email: { label: "Email", value: "account@uniqueteam.in", href: "mailto:account@uniqueteam.in" },
+    website: { label: "Website", value: "www.uniqueteam.in", href: "https://www.uniqueteam.in" },
+    office: { label: "Office", value: "FA 18 First Floor Lake City Mall Kapurbawadi Junction Thane(W) 400607 Mumbai, India", href: "#" },
     hours: { label: "Business Hours", value: "Mon–Fri, 9 AM – 6 PM", href: "#" },
   },
   responseNote: "We will review your requirement and respond using the contact details provided.",

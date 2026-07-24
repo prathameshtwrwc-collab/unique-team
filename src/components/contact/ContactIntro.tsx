@@ -25,7 +25,7 @@ function GoldUnderline() {
         fill="none"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ delay: 1.2, duration: 0.55, ease: EASE_OUT }}
+        transition={{ delay: 0.9, duration: 0.5, ease: EASE_OUT }}
       />
     </svg>
   );
@@ -36,13 +36,13 @@ export function ContactIntro() {
 
   return (
     <div className="max-w-[720px]">
-      <motion.div variants={fadeUp(0.2, 14, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+      <motion.div variants={fadeUp(0.15, 12, 0.45)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
         <Eyebrow>{eyebrow}</Eyebrow>
       </motion.div>
 
-      <h2 className="mt-6 font-serif text-[clamp(3.5rem,5vw,6rem)] leading-[0.94] tracking-[-0.04em] text-plum lg:mt-7">
+      <h2 className="mt-5 font-serif text-[clamp(3rem,4.8vw,5.5rem)] leading-[0.94] tracking-[-0.04em] text-plum lg:mt-6">
         <span className="block pb-[0.06em]">
-          <motion.span className="block" variants={lineReveal(0.4)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
+          <motion.span className="block" variants={lineReveal(0.3)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
             {headline.lineOne}
           </motion.span>
         </span>
@@ -51,7 +51,7 @@ export function ContactIntro() {
             className="relative inline-block italic text-purple"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.75, duration: 0.5, ease: EASE_OUT }}
+            transition={{ delay: 0.6, duration: 0.4, ease: EASE_OUT }}
           >
             {headline.lineTwoAccent}
             <GoldUnderline />
@@ -60,11 +60,11 @@ export function ContactIntro() {
       </h2>
 
       <motion.p
-        variants={fadeUp(0.8, 16, 0.6)}
+        variants={fadeUp(0.6, 14, 0.5)}
         initial="hidden"
         whileInView="visible"
         viewport={defaultViewport}
-        className="mt-7 text-[17px] leading-[1.65] text-ink-soft lg:mt-8 lg:text-[18px]"
+        className="mt-5 text-[16px] leading-[1.65] text-ink-soft lg:mt-6 lg:text-[17px]"
       >
         {supportingCopy}
       </motion.p>

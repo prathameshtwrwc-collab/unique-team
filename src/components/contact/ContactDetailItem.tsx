@@ -38,9 +38,20 @@ function ClockIcon() {
   );
 }
 
+function WebsiteIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9" stroke="#5A2DA8" />
+      <path d="M3.5 12h17M12 3.5a15.4 15.4 0 0 1 4 8.5 15.4 15.4 0 0 1-4 8.5 15.4 15.4 0 0 1-4-8.5 15.4 15.4 0 0 1 4-8.5" stroke="#D6A03E" />
+      <circle cx="12" cy="12" r="2" fill="#D6A03E" />
+    </svg>
+  );
+}
+
 const iconMap: Record<string, () => ReactElement> = {
   phone: PhoneIcon,
   email: EmailIcon,
+  website: WebsiteIcon,
   office: LocationIcon,
   hours: ClockIcon,
 };

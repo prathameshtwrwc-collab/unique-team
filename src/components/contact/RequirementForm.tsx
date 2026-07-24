@@ -16,7 +16,7 @@ type FormState = "idle" | "submitting" | "success" | "error";
 
 export function RequirementForm() {
   const [formState, setFormState] = useState<FormState>("idle");
-  
+
   const {
     register,
     handleSubmit,
@@ -53,7 +53,7 @@ export function RequirementForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate aria-label="Submit your requirement form">
       <div className="mb-7">
-        <h3 className="text-[26px] font-serif leading-tight text-plum lg:text-[28px]">
+        <h3 className="text-[24px] font-serif leading-tight text-plum lg:text-[26px]">
           {contactData.form.title}
         </h3>
         <p className="mt-2 text-[14px] leading-[1.6] text-ink-soft lg:text-[15px]">
@@ -62,8 +62,7 @@ export function RequirementForm() {
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">
-        {/* Row 1 */}
-        <motion.div variants={fadeUp(0.6, 10, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+        <motion.div variants={fadeUp(0.3, 8, 0.35)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
           <FormField
             id="fullName"
             label="Full name"
@@ -73,7 +72,7 @@ export function RequirementForm() {
           />
         </motion.div>
 
-        <motion.div variants={fadeUp(0.65, 10, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+        <motion.div variants={fadeUp(0.35, 8, 0.35)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
           <FormField
             id="companyName"
             label="Company name"
@@ -83,8 +82,7 @@ export function RequirementForm() {
           />
         </motion.div>
 
-        {/* Row 2 */}
-        <motion.div variants={fadeUp(0.7, 10, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+        <motion.div variants={fadeUp(0.4, 8, 0.35)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
           <FormField
             id="workEmail"
             label="Work email"
@@ -95,7 +93,7 @@ export function RequirementForm() {
           />
         </motion.div>
 
-        <motion.div variants={fadeUp(0.75, 10, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+        <motion.div variants={fadeUp(0.45, 8, 0.35)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
           <FormField
             id="contactNumber"
             label="Contact number"
@@ -106,8 +104,7 @@ export function RequirementForm() {
           />
         </motion.div>
 
-        {/* Row 3 */}
-        <motion.div variants={fadeUp(0.8, 10, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+        <motion.div variants={fadeUp(0.5, 8, 0.35)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
           <FormSelect
             id="serviceRequired"
             label="Service required"
@@ -117,7 +114,7 @@ export function RequirementForm() {
           />
         </motion.div>
 
-        <motion.div variants={fadeUp(0.85, 10, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+        <motion.div variants={fadeUp(0.55, 8, 0.35)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
           <FormSelect
             id="numberOfPositions"
             label="Number of positions"
@@ -127,9 +124,8 @@ export function RequirementForm() {
           />
         </motion.div>
 
-        {/* Row 4: Preferred timeline — full width */}
         <motion.div
-          variants={fadeUp(0.9, 10, 0.5)}
+          variants={fadeUp(0.6, 8, 0.35)}
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
@@ -144,9 +140,8 @@ export function RequirementForm() {
           />
         </motion.div>
 
-        {/* Row 5: Requirement details — full width */}
         <motion.div
-          variants={fadeUp(0.95, 10, 0.5)}
+          variants={fadeUp(0.65, 8, 0.35)}
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
@@ -162,9 +157,8 @@ export function RequirementForm() {
         </motion.div>
       </div>
 
-      {/* Bottom row: Consent + Submit */}
       <motion.div
-        variants={fadeUp(1.0, 10, 0.5)}
+        variants={fadeUp(0.7, 8, 0.35)}
         initial="hidden"
         whileInView="visible"
         viewport={defaultViewport}
@@ -182,7 +176,7 @@ export function RequirementForm() {
           type="submit"
           disabled={formState === "submitting"}
           aria-busy={formState === "submitting"}
-          className="group inline-flex h-[56px] w-full items-center justify-center gap-2.5 rounded-[13px] bg-plum px-7 text-[15px] font-semibold text-white shadow-[0_16px_40px_rgba(46,21,87,0.3)] transition-all duration-300 hover:-translate-y-[2px] hover:bg-purple-deep hover:shadow-[0_18px_44px_rgba(46,21,87,0.36)] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:bg-plum md:w-auto"
+          className="group inline-flex h-[54px] w-full items-center justify-center gap-2.5 rounded-[13px] bg-plum px-7 text-[15px] font-semibold text-white shadow-[0_14px_36px_rgba(46,21,87,0.3)] transition-all duration-300 hover:-translate-y-[2px] hover:bg-purple-deep hover:shadow-[0_16px_40px_rgba(46,21,87,0.36)] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:bg-plum md:w-auto"
         >
           {formState === "submitting" ? (
             <>

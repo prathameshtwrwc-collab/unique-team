@@ -22,8 +22,9 @@ export function ContactDetails() {
       <div className="mt-7 flex flex-col gap-1">
         <ContactDetailItem icon="phone" label={details.phone.label} value={details.phone.value} href={details.phone.href} index={0} />
         <ContactDetailItem icon="email" label={details.email.label} value={details.email.value} href={details.email.href} index={1} />
-        <ContactDetailItem icon="office" label={details.office.label} value={details.office.value} href={details.office.href} index={2} />
-        <ContactDetailItem icon="hours" label={details.hours.label} value={details.hours.value} href={details.hours.href} index={3} />
+        <ContactDetailItem icon="website" label={details.website.label} value={details.website.value} href={details.website.href} index={2} />
+        <ContactDetailItem icon="office" label={details.office.label} value={details.office.value} href={details.office.href} index={3} />
+        <ContactDetailItem icon="hours" label={details.hours.label} value={details.hours.value} href={details.hours.href} index={4} />
       </div>
 
       {/* Response note */}

@@ -12,8 +12,8 @@ export const whyUniqueHRData = {
     text: "We do not simply fill vacancies. We help businesses build teams prepared for what comes next.",
   },
   image: {
-    src: "/images/why-uniquehr-lead.jpg",
-    alt: "Experienced business professional in tailored suit exuding confidence and expertise",
+    src: "/images/whychoose.png",
+    alt: "Why choose UniqueHR — workforce solutions built around your business",
   },
 };
 

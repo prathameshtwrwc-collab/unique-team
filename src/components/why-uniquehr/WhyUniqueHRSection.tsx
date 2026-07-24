@@ -1,4 +1,4 @@
-import { WhyUniqueHRVisual } from "./WhyUniqueHRVisual";
+import { whyUniqueHRData } from "../../data/whyUniqueHR";
 import { WhyUniqueHRContent } from "./WhyUniqueHRContent";
 
 export function WhyUniqueHRSection() {
@@ -7,37 +7,32 @@ export function WhyUniqueHRSection() {
       id="why-uniquehr"
       aria-label="Why UniqueHR"
       className="relative overflow-hidden bg-cream"
-      style={{
-        background: "linear-gradient(180deg, #FBF8F3 0%, #F9F5F0 60%, #FBF8F3 100%)",
-      }}
     >
-      {/* Subtle dot grid texture */}
-      <div aria-hidden className="pointer-events-none absolute left-[8%] top-[10%] opacity-25">
-        <svg width="64" height="64">
-          <defs>
-            <pattern id="why-dots" width="12" height="12" patternUnits="userSpaceOnUse">
-              <circle cx="1.5" cy="1.5" r="1.5" fill="#A98AD5" />
-            </pattern>
-          </defs>
-          <rect width="64" height="64" fill="url(#why-dots)" />
-        </svg>
+      <div aria-hidden className="absolute inset-0">
+        <img
+          src={whyUniqueHRData.image.src}
+          alt=""
+          className="hidden h-full w-full object-cover object-center md:block"
+          fetchPriority="high"
+        />
+        <div
+          aria-hidden
+          className="h-full w-full md:hidden"
+          style={{
+            background: "linear-gradient(135deg, #F7F2F8 0%, #FBF8F3 100%)",
+          }}
+        />
       </div>
 
       <div
         className="container-shell relative"
         style={{
-          paddingTop: "clamp(120px, 10vw, 170px)",
-          paddingBottom: "clamp(40px, 6vw, 80px)",
+          paddingTop: "clamp(60px, 6vw, 90px)",
+          paddingBottom: "clamp(60px, 6vw, 90px)",
         }}
       >
         <div className="grid gap-y-16 lg:grid-cols-12 lg:gap-x-8 xl:gap-x-10">
-          {/* Visual: columns 1-6 */}
-          <div className="lg:col-span-6">
-            <WhyUniqueHRVisual />
-          </div>
-
-          {/* Content: columns 7-12 (wider) */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 lg:col-start-7">
             <WhyUniqueHRContent />
           </div>
         </div>

@@ -2,11 +2,6 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { usePrefersReducedMotion } from "../../hooks/useReducedMotion";
 
-/**
- * Thin organic gold curve travelling from the lower-left collage
- * diagonally to the upper-right edge. Drawn with GSAP after the
- * headline appears. Avoids the lead figure's face.
- */
 export function GoldTrajectory({ className }: { className?: string }) {
   const pathRef = useRef<SVGPathElement>(null);
   const nodesRef = useRef<SVGGElement>(null);
@@ -26,15 +21,15 @@ export function GoldTrajectory({ className }: { className?: string }) {
     gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
     gsap.set(nodes.children, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" });
 
-    const tl = gsap.timeline({ delay: 1.6 });
+    const tl = gsap.timeline({ delay: 1.3 });
     tl.to(path, {
       strokeDashoffset: 0,
-      duration: 1.4,
+      duration: 1.0,
       ease: "power2.inOut",
     }).to(
       nodes.children,
-      { opacity: 1, scale: 1, duration: 0.4, stagger: 0.15, ease: "power2.out" },
-      "-=0.5"
+      { opacity: 1, scale: 1, duration: 0.35, stagger: 0.12, ease: "power2.out" },
+      "-=0.4"
     );
 
     return () => {

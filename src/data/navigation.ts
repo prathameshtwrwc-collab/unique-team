@@ -5,12 +5,11 @@ export interface NavLink {
 }
 
 export const utilityLinks: NavLink[] = [
-  { label: "Careers", href: "#contact" },
-  { label: "Resources", href: "#contact" },
-  { label: "Support", href: "#contact" },
+  { label: "account@uniqueteam.in", href: "mailto:account@uniqueteam.in" },
+  { label: "+91 8422976666", href: "tel:+918422976666" },
 ];
 
-export const utilityMessage = "Your growth. Our people. Shared success.";
+export const utilityMessage = "Reach us at account@uniqueteam.in · +91 8422976666";
 
 export const mainNavLinks: NavLink[] = [
   { label: "Home", href: "#home", active: true },

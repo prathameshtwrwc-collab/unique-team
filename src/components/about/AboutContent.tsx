@@ -32,7 +32,7 @@ function GoldUnderlineSmall() {
         fill="none"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ delay: 1.6, duration: 0.55, ease: EASE_OUT }}
+        transition={{ delay: 1.1, duration: 0.5, ease: EASE_OUT }}
       />
     </svg>
   );
@@ -40,25 +40,25 @@ function GoldUnderlineSmall() {
 
 export function AboutContent() {
   return (
-    <div className="max-w-[600px]">
-      <motion.div variants={fadeUp(0.3, 14, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+    <div className="max-w-[620px]">
+      <motion.div variants={fadeUp(0.2, 12, 0.45)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
         <Eyebrow>{aboutData.eyebrow}</Eyebrow>
       </motion.div>
 
-      <h2 className="hero-headline mt-5 font-serif text-plum lg:mt-6">
+      <h2 className="section-headline mt-4 font-serif text-plum lg:mt-5">
         <span className="block pb-[0.06em]">
-          <motion.span className="block" variants={lineReveal(0.45)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
+          <motion.span className="block" variants={lineReveal(0.35)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
             {aboutData.headline.lineOne}
           </motion.span>
         </span>
         <span className="block pb-[0.1em]">
-          <motion.span className="block" variants={lineReveal(0.62)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
+          <motion.span className="block" variants={lineReveal(0.5)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
             {aboutData.headline.lineTwoStart}{" "}
             <motion.span
               className="relative inline-block italic text-purple"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.05, duration: 0.5, ease: EASE_OUT }}
+              transition={{ delay: 0.8, duration: 0.4, ease: EASE_OUT }}
             >
               {aboutData.headline.lineTwoAccent}
               <GoldUnderlineSmall />
@@ -68,26 +68,26 @@ export function AboutContent() {
       </h2>
 
       <motion.p
-        variants={fadeUp(1.0, 16, 0.6)}
+        variants={fadeUp(0.75, 14, 0.5)}
         initial="hidden"
         whileInView="visible"
         viewport={defaultViewport}
-        className="mt-6 text-[17.5px] leading-[1.65] text-ink md:text-[19px] lg:mt-7 lg:text-[20px]"
+        className="mt-5 text-[17px] leading-[1.65] text-ink md:text-[18.5px] lg:mt-6 lg:text-[19.5px]"
       >
         {aboutData.primaryParagraph}
       </motion.p>
 
       <motion.p
-        variants={fadeUp(1.2, 16, 0.6)}
+        variants={fadeUp(0.9, 14, 0.5)}
         initial="hidden"
         whileInView="visible"
         viewport={defaultViewport}
-        className="mt-5 text-[16px] leading-[1.65] text-ink-soft md:text-[17px]"
+        className="mt-4 text-[16px] leading-[1.65] text-ink-soft md:text-[17px] lg:mt-5"
       >
         {aboutData.secondaryParagraph}
       </motion.p>
 
-      <motion.div variants={fadeUp(1.35, 14, 0.55)} initial="hidden" whileInView="visible" viewport={defaultViewport} className="mt-7 lg:mt-9">
+      <motion.div variants={fadeUp(1.05, 12, 0.45)} initial="hidden" whileInView="visible" viewport={defaultViewport} className="mt-6 lg:mt-8">
         <Button href={aboutData.cta.href} variant="primary" className="w-full sm:w-auto">
           {aboutData.cta.label}
         </Button>

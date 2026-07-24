@@ -8,7 +8,7 @@ interface IndustryCentralVisualProps {
 
 export function IndustryCentralVisual({ industry }: IndustryCentralVisualProps) {
   return (
-    <div className="relative h-[420px] w-[420px] lg:h-[480px] lg:w-[480px]">
+    <div className="relative mx-auto h-[280px] w-[280px] sm:h-[420px] sm:w-[420px] lg:h-[480px] lg:w-[480px]">
       {/* Pale lilac inner background */}
       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-lilac-pale to-lilac/40" />
       

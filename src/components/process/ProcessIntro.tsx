@@ -26,7 +26,7 @@ function GoldUnderline() {
         fill="none"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ delay: 1.3, duration: 0.55, ease: EASE_OUT }}
+        transition={{ delay: 1.0, duration: 0.5, ease: EASE_OUT }}
       />
     </svg>
   );
@@ -34,25 +34,25 @@ function GoldUnderline() {
 
 export function ProcessIntro() {
   return (
-    <div className="max-w-[560px]">
-      <motion.div variants={fadeUp(0.2, 14, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+    <div className="mx-auto max-w-[680px]">
+      <motion.div variants={fadeUp(0.15, 12, 0.45)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
         <Eyebrow>{processData.eyebrow}</Eyebrow>
       </motion.div>
 
-      <h2 className="process-headline mt-6 font-serif text-plum lg:mt-7">
-        <span className="block pb-[0.06em]">
-          <motion.span className="block" variants={lineReveal(0.4)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
+      <h2 className="process-headline mt-5 font-serif text-plum lg:mt-6">
+        <span className="block pb-[0.04em]">
+          <motion.span className="block" variants={lineReveal(0.3)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
             {processData.headline.lineOne}
           </motion.span>
         </span>
-        <span className="block pb-[0.08em]">
-          <motion.span className="block" variants={lineReveal(0.55)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
+        <span className="block pb-[0.06em]">
+          <motion.span className="block" variants={lineReveal(0.45)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
             {processData.headline.lineTwoStart}{" "}
             <motion.span
               className="relative inline-block italic text-purple"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.9, duration: 0.5, ease: EASE_OUT }}
+              transition={{ delay: 0.75, duration: 0.4, ease: EASE_OUT }}
             >
               {processData.headline.lineTwoAccent}
               <GoldUnderline />
@@ -62,19 +62,19 @@ export function ProcessIntro() {
       </h2>
 
       <motion.p
-        variants={fadeUp(0.8, 16, 0.6)}
+        variants={fadeUp(0.65, 14, 0.5)}
         initial="hidden"
         whileInView="visible"
         viewport={defaultViewport}
-        className="mt-7 text-[17px] leading-[1.65] text-ink-soft lg:mt-8 lg:text-[18px]"
+        className="mt-5 text-[16px] leading-[1.65] text-ink-soft lg:mt-6 lg:text-[17px]"
       >
         {processData.supportingCopy}
       </motion.p>
 
-      <motion.div variants={fadeUp(1.0, 14, 0.55)} initial="hidden" whileInView="visible" viewport={defaultViewport} className="mt-7">
+      <motion.div variants={fadeUp(0.8, 10, 0.45)} initial="hidden" whileInView="visible" viewport={defaultViewport} className="mt-6">
         <a
           href={processData.cta.href}
-          className="group inline-flex items-center gap-2 text-[14px] font-semibold text-plum transition-colors duration-300 hover:text-purple"
+          className="group inline-flex items-center gap-2 text-[13px] font-semibold text-plum transition-colors duration-300 hover:text-purple"
         >
           <span>{processData.cta.label}</span>
           <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-[4px]" />

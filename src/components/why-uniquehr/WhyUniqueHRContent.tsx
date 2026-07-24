@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { whyUniqueHRData } from "../../data/whyUniqueHR";
 import { Eyebrow } from "../ui/Eyebrow";
 import { Button } from "../ui/Button";
-import { WhyUniqueHRBenefits } from "./WhyUniqueHRBenefits";
 import { fadeUp, lineReveal, EASE_OUT, defaultViewport, headlineViewport } from "../../lib/animations";
 
 function GoldUnderline() {
@@ -27,7 +26,7 @@ function GoldUnderline() {
         fill="none"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ delay: 1.5, duration: 0.55, ease: EASE_OUT }}
+        transition={{ delay: 1.1, duration: 0.5, ease: EASE_OUT }}
       />
     </svg>
   );
@@ -35,25 +34,25 @@ function GoldUnderline() {
 
 export function WhyUniqueHRContent() {
   return (
-    <div className="max-w-[620px]">
-      <motion.div variants={fadeUp(0.3, 14, 0.5)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
+    <div className="max-w-[640px]">
+      <motion.div variants={fadeUp(0.2, 12, 0.45)} initial="hidden" whileInView="visible" viewport={defaultViewport}>
         <Eyebrow>{whyUniqueHRData.eyebrow}</Eyebrow>
       </motion.div>
 
-      <h2 className="why-headline mt-6 font-serif text-plum lg:mt-7">
+      <h2 className="why-headline mt-5 font-serif text-plum lg:mt-6">
         <span className="block pb-[0.06em]">
-          <motion.span className="block" variants={lineReveal(0.45)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
+          <motion.span className="block" variants={lineReveal(0.35)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
             {whyUniqueHRData.headline.lineOne}
           </motion.span>
         </span>
         <span className="block pb-[0.08em]">
-          <motion.span className="block" variants={lineReveal(0.6)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
+          <motion.span className="block" variants={lineReveal(0.5)} initial="hidden" whileInView="visible" viewport={headlineViewport}>
             {whyUniqueHRData.headline.lineTwoStart}{" "}
             <motion.span
               className="relative inline-block italic text-purple"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.0, duration: 0.5, ease: EASE_OUT }}
+              transition={{ delay: 0.8, duration: 0.4, ease: EASE_OUT }}
             >
               {whyUniqueHRData.headline.lineTwoAccent}
               <GoldUnderline />
@@ -63,25 +62,21 @@ export function WhyUniqueHRContent() {
       </h2>
 
       <motion.p
-        variants={fadeUp(0.9, 16, 0.6)}
+        variants={fadeUp(0.75, 14, 0.5)}
         initial="hidden"
         whileInView="visible"
         viewport={defaultViewport}
-        className="mt-7 text-[17px] leading-[1.65] text-ink-soft lg:mt-8 lg:text-[18px]"
+        className="mt-5 text-[16px] leading-[1.65] text-ink-soft lg:mt-6 lg:text-[17px]"
       >
         {whyUniqueHRData.supportingCopy}
       </motion.p>
 
-      <div className="mt-9 lg:mt-11">
-        <WhyUniqueHRBenefits />
-      </div>
-
       <motion.div
-        variants={fadeUp(1.8, 14, 0.55)}
+        variants={fadeUp(0.95, 12, 0.45)}
         initial="hidden"
         whileInView="visible"
         viewport={defaultViewport}
-        className="mt-6 lg:mt-7"
+        className="mt-6 lg:mt-8"
       >
         <Button href={whyUniqueHRData.cta.href} variant="primary">
           {whyUniqueHRData.cta.label}

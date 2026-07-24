@@ -10,7 +10,6 @@ export function FinalCTASection() {
       className="relative overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #241044 0%, #351664 45%, #4A2384 100%)",
-        minHeight: "680px",
       }}
       variants={fadeIn(0, 0.8)}
       initial="hidden"
@@ -58,8 +57,8 @@ export function FinalCTASection() {
       <div
         className="container-shell relative"
         style={{
-          paddingTop: "clamp(110px, 9vw, 155px)",
-          paddingBottom: "clamp(110px, 9vw, 155px)",
+          paddingTop: "clamp(70px, 7vw, 100px)",
+          paddingBottom: "clamp(70px, 7vw, 100px)",
         }}
       >
         <div className="grid gap-y-14 lg:grid-cols-12 lg:gap-x-8 xl:gap-x-10">

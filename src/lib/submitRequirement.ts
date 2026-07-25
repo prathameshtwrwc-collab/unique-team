@@ -1,7 +1,7 @@
 import type { ContactFormData } from "./contactValidation";
 
 const FORM_ENDPOINT = "https://splitforms.com/api/submit";
-const ACCESS_KEY = "b841bca75199463cb8a9be2f6513dae8";
+const ACCESS_KEY = "7bf1545a14b44ff8860b6195e93550cc";
 
 export async function submitRequirement(data: ContactFormData): Promise<{ success: boolean; message: string }> {
   const formData = new FormData();

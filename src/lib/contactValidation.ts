@@ -19,6 +19,8 @@ export const serviceOptions = [
   "Payroll & Compliance",
   "Training & Development",
   "Migrant Workforce Solutions",
+  "RMC PLANT",
+  "Rentals & Transport",
   "Other Requirement",
 ];
 

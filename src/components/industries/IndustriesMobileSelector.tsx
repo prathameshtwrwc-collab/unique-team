@@ -26,12 +26,14 @@ export function IndustriesMobileSelector({ activeIndustry, onSelectIndustry }: I
       const nextIndex = (currentIndex + 1) % industries.length;
       const nextId = industries[nextIndex].id;
       onSelectIndustry(nextId);
-      // Scroll the button into view
+      // Scroll the button into view — horizontal only
       const container = scrollRef.current;
       if (container) {
-        const buttons = container.querySelectorAll("button");
-        if (buttons[nextIndex]) {
-          buttons[nextIndex].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        const track = container.children[0] as HTMLElement | undefined;
+        const btn = track?.children[nextIndex] as HTMLElement | undefined;
+        if (btn) {
+          const scrollTarget = btn.offsetLeft - (track?.offsetLeft || 0);
+          container.scrollTo({ left: scrollTarget, behavior: "smooth" });
         }
       }
     }, AUTO_INTERVAL);

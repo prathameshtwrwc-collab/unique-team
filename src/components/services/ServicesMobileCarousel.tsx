@@ -13,9 +13,12 @@ export function ServicesMobileCarousel() {
   const scrollTo = useCallback((index: number) => {
     const container = containerRef.current;
     if (!container) return;
-    const cards = container.children[0]?.children;
-    if (!cards || !cards[index]) return;
-    (cards[index] as HTMLElement).scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    const track = container.children[0] as HTMLElement | undefined;
+    if (!track) return;
+    const card = track.children[index] as HTMLElement | undefined;
+    if (!card) return;
+    const scrollTarget = card.offsetLeft - track.offsetLeft;
+    container.scrollTo({ left: scrollTarget, behavior: "smooth" });
     setCurrent(index);
   }, []);
 
@@ -26,9 +29,11 @@ export function ServicesMobileCarousel() {
         const next = (prev + 1) % services.length;
         const container = containerRef.current;
         if (container) {
-          const cards = container.children[0]?.children;
-          if (cards?.[next]) {
-            (cards[next] as HTMLElement).scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+          const track = container.children[0] as HTMLElement | undefined;
+          const card = track?.children[next] as HTMLElement | undefined;
+          if (card) {
+            const scrollTarget = card.offsetLeft - (track?.offsetLeft || 0);
+            container.scrollTo({ left: scrollTarget, behavior: "smooth" });
           }
         }
         return next;

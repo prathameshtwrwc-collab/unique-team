@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { mainNavLinks } from "../../data/navigation";
 import { SpeechIcon } from "../ui/icons";
@@ -8,9 +8,11 @@ import { EASE_OUT } from "../../lib/animations";
 interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
+  activeSection?: string;
+  onNavigate?: (section: string) => void;
 }
 
-export function MobileMenu({ open, onClose }: MobileMenuProps) {
+export function MobileMenu({ open, onClose, activeSection, onNavigate }: MobileMenuProps) {
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -20,6 +22,11 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       window.removeEventListener("keydown", onKey);
     };
   }, [open, onClose]);
+
+  const handleNav = useCallback((section: string) => {
+    onNavigate?.(section);
+    onClose();
+  }, [onNavigate, onClose]);
 
   return (
     <AnimatePresence>
@@ -46,13 +53,17 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             className="fixed inset-x-3 top-3 z-50 rounded-[22px] border border-[rgba(46,21,87,0.12)] bg-cream p-6 shadow-[0_30px_80px_rgba(46,21,87,0.25)] lg:hidden"
           >
             <div className="mb-5 flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
+              <button
+                type="button"
+                onClick={() => handleNav("home")}
+                className="flex items-center gap-2.5"
+              >
                 <img
                   src="/images/logo.png"
-                  alt="UniqueHR"
+                  alt=""
                   className="h-[44px] w-auto"
                 />
-                <span className="flex flex-col leading-tight">
+                <span className="flex flex-col leading-tight text-left">
                   <span className="text-[16px] font-bold tracking-[-0.01em] text-plum">
                     Unique HR Team
                   </span>
@@ -60,12 +71,12 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                     Solutions Pvt. Ltd.
                   </span>
                 </span>
-              </div>
+              </button>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close menu"
-                className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-[rgba(46,21,87,0.12)] bg-white text-plum"
+                className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-[rgba(46,21,87,0.12)] bg-white text-plum cursor-pointer"
               >
                 <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden>
                   <path
@@ -80,35 +91,38 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
             <nav aria-label="Mobile">
               <ul className="divide-y divide-[rgba(46,21,87,0.08)]">
-                {mainNavLinks.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      onClick={onClose}
-                      aria-current={link.active ? "page" : undefined}
-                      className={cn(
-                        "flex items-center justify-between py-3.5 text-[17px] font-medium",
-                        link.active ? "text-purple" : "text-ink"
-                      )}
-                    >
-                      {link.label}
-                      {link.active && (
-                        <span className="h-[2px] w-8 rounded-full bg-gradient-to-r from-gold to-gold-soft" />
-                      )}
-                    </a>
-                  </li>
-                ))}
+                {mainNavLinks.map((link) => {
+                  const section = link.href.replace("#", "");
+                  const isActive = activeSection === section;
+                  return (
+                    <li key={link.label}>
+                      <button
+                        type="button"
+                        onClick={() => handleNav(section)}
+                        className={cn(
+                          "flex w-full items-center justify-between py-3.5 text-[17px] font-medium text-left cursor-pointer",
+                          isActive ? "text-purple" : "text-ink"
+                        )}
+                      >
+                        {link.label}
+                        {isActive && (
+                          <span className="h-[2px] w-8 rounded-full bg-gradient-to-r from-gold to-gold-soft" />
+                        )}
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
 
-            <a
-              href="#contact"
-              onClick={onClose}
-              className="mt-5 flex h-[52px] items-center justify-center gap-2 rounded-[14px] bg-purple text-[15px] font-semibold text-white shadow-[0_14px_30px_rgba(90,45,168,0.28)]"
+            <button
+              type="button"
+              onClick={() => handleNav("contact")}
+              className="mt-5 flex h-[52px] w-full items-center justify-center gap-2 rounded-[14px] bg-purple text-[15px] font-semibold text-white shadow-[0_14px_30px_rgba(90,45,168,0.28)] cursor-pointer"
             >
               <SpeechIcon aria-hidden />
               Let&rsquo;s Talk
-            </a>
+            </button>
           </motion.div>
         </>
       )}

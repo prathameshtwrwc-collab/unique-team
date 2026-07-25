@@ -4,14 +4,15 @@ import { fadeUp, defaultViewport } from "../../lib/animations";
 
 interface FooterLinkGroupProps {
   group: FooterLinkGroupData;
-  index: number;
+  onNavigate: (section: string) => void;
 }
 
-export function FooterLinkGroup({ group, index }: FooterLinkGroupProps) {
+export function FooterLinkGroup({ group, onNavigate }: FooterLinkGroupProps) {
+
   return (
     <motion.nav
       aria-label={group.title}
-      variants={fadeUp(0.5 + index * 0.1, 16, 0.6)}
+      variants={fadeUp(0.5, 16, 0.6)}
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}
@@ -23,17 +24,32 @@ export function FooterLinkGroup({ group, index }: FooterLinkGroupProps) {
       </h3>
       
       <ul className="flex flex-col gap-3">
-        {group.links.map((link) => (
-          <li key={link.label}>
-            <a
-              href={link.href}
-              className="group relative inline-block text-[16px] text-white/80 transition-colors duration-300 hover:text-white lg:text-[17px]"
-            >
-              {link.label}
-              <span className="absolute -bottom-0.5 left-0 h-[2px] w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-            </a>
-          </li>
-        ))}
+        {group.links.map((link) => {
+          const linkSection = link.href.replace("#", "");
+          const isHashNav = link.href.startsWith("#") && linkSection.length > 0;
+          return (
+            <li key={link.label}>
+              {isHashNav ? (
+                <button
+                  type="button"
+                  onClick={() => onNavigate(linkSection)}
+                  className="group relative inline-block text-left text-[16px] text-white/80 transition-colors duration-300 hover:text-white lg:text-[17px] cursor-pointer"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 h-[2px] w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+                </button>
+              ) : (
+                <a
+                  href={link.href}
+                  className="group relative inline-block text-[16px] text-white/80 transition-colors duration-300 hover:text-white lg:text-[17px]"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 h-[2px] w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+                </a>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </motion.nav>
   );

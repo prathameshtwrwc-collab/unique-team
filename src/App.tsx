@@ -14,24 +14,16 @@ import { FinalCTASection } from "./components/final-cta/FinalCTASection";
 import { ContactSection } from "./components/contact/ContactSection";
 import { Footer } from "./components/footer/Footer";
 import { NavContext } from "./lib/NavContext";
+import { useLenis } from "./hooks/useLenis";
 
 const sections = [
-  "home",
-  "about",
-  "services",
-  "industries",
-  "process",
-  "compliance",
-  "values",
-  "contact",
-  "why-uniquehr",
-  "final-cta",
+  "home", "about", "services", "industries", "process",
+  "compliance", "values", "contact", "why-uniquehr", "final-cta",
 ] as const;
 
 type Section = (typeof sections)[number];
 
-const sectionComponents: Record<Section, () => React.ReactElement> = {
-  home: HeroSection,
+const sectionComponents: Record<string, () => React.ReactElement> = {
   about: AboutSection,
   services: ServicesSection,
   industries: IndustriesSection,
@@ -48,36 +40,54 @@ function getSectionFromHash(): Section {
   return (sections as readonly string[]).includes(hash) ? (hash as Section) : "home";
 }
 
-function SectionWrapper({ section, children }: { section: Section; children: React.ReactNode }) {
+function SectionWrapper({ section, children }: { section: string; children: React.ReactNode }) {
   return (
     <motion.div
       key={section}
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
-      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
   );
 }
 
+function FullSite() {
+  return (
+    <>
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <WhyUniqueHRSection />
+      <IndustriesSection />
+      <ProcessSection />
+      <ComplianceSection />
+      <ValuesSection />
+      <FinalCTASection />
+      <ContactSection />
+    </>
+  );
+}
+
 export default function App() {
-  const [activeSection, setActiveSection] = useState<Section>("home");
+  const [activeSection, setActiveSection] = useState<Section>(getSectionFromHash());
+
+  useLenis();
+
+  const isHome = activeSection === "home";
 
   const navigate = useCallback((section: string) => {
-    if ((sections as readonly string[]).includes(section)) {
-      setActiveSection(section as Section);
-      window.location.hash = section;
+    if (!(sections as readonly string[]).includes(section)) return;
+    setActiveSection(section as Section);
+    window.location.hash = section;
+    if (section === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, []);
 
   useEffect(() => {
-    const onHashChange = () => {
-      setActiveSection(getSectionFromHash());
-    };
-    window.addEventListener("hashchange", onHashChange);
-
     const onClick = (e: MouseEvent) => {
       const anchor = (e.target as HTMLElement).closest("a");
       if (!anchor) return;
@@ -90,14 +100,8 @@ export default function App() {
       }
     };
     document.addEventListener("click", onClick);
-
-    return () => {
-      window.removeEventListener("hashchange", onHashChange);
-      document.removeEventListener("click", onClick);
-    };
+    return () => document.removeEventListener("click", onClick);
   }, [navigate]);
-
-  const ActiveComponent = sectionComponents[activeSection];
 
   return (
     <div className="min-h-screen bg-cream">
@@ -105,13 +109,20 @@ export default function App() {
         <UtilityBar />
         <MainHeader activeSection={activeSection} onNavigate={navigate} />
         <main>
-          <AnimatePresence mode="wait">
-            <SectionWrapper key={activeSection} section={activeSection}>
-              <ActiveComponent />
-            </SectionWrapper>
-          </AnimatePresence>
+          {isHome ? (
+            <FullSite />
+          ) : (
+            <AnimatePresence mode="wait">
+              <SectionWrapper key={activeSection} section={activeSection}>
+                {(() => {
+                  const C = sectionComponents[activeSection];
+                  return <C />;
+                })()}
+              </SectionWrapper>
+            </AnimatePresence>
+          )}
         </main>
-        <Footer onNavigate={navigate} />
+        {isHome && <Footer onNavigate={navigate} />}
       </NavContext.Provider>
     </div>
   );

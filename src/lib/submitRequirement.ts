@@ -1,20 +1,18 @@
 import type { ContactFormData } from "./contactValidation";
 
-const FORM_ENDPOINT = "https://api.lazyforms.com/f/1bfa2b3d-cad5-4f78-bfbc-ad94be9c5808";
+const ACCESS_KEY = "1bfa2b3d-cad5-4f78-bfbc-ad94be9c5808";
+const FORM_ENDPOINT = "https://api.lazyforms.com/f/" + ACCESS_KEY;
 
 export async function submitRequirement(data: ContactFormData): Promise<{ success: boolean; message: string }> {
-  const body = new URLSearchParams();
-  for (const [key, value] of Object.entries(data)) {
-    body.append(key, value as string);
-  }
+  const payload = { ...data, access_key: ACCESS_KEY };
 
   const response = await fetch(FORM_ENDPOINT, {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/json",
     },
-    body: body.toString(),
+    body: JSON.stringify(payload),
   });
 
   const text = await response.text();

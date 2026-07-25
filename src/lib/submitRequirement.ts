@@ -1,18 +1,26 @@
 import type { ContactFormData } from "./contactValidation";
 
-const FORM_ENDPOINT = "https://formspree.io/f/mzdnkbkp";
+const FORM_ENDPOINT = "https://splitforms.com/api/submit";
+const ACCESS_KEY = "b841bca75199463cb8a9be2f6513dae8";
 
 export async function submitRequirement(data: ContactFormData): Promise<{ success: boolean; message: string }> {
+  const formData = new FormData();
+  formData.set("access_key", ACCESS_KEY);
+  formData.set("subject", "New Requirement Submission from " + data.companyName);
+
+  for (const [key, value] of Object.entries(data)) {
+    formData.set(key, value);
+  }
+
   const response = await fetch(FORM_ENDPOINT, {
     method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
+    body: formData,
+    headers: { Accept: "application/json" },
   });
 
-  if (!response.ok) {
+  const json = await response.json();
+
+  if (!json.success) {
     throw new Error("Submission failed. Please try again.");
   }
 

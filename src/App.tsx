@@ -122,7 +122,7 @@ export default function App() {
             </AnimatePresence>
           )}
         </main>
-        {isHome && <Footer onNavigate={navigate} />}
+        <Footer onNavigate={navigate} />
       </NavContext.Provider>
     </div>
   );

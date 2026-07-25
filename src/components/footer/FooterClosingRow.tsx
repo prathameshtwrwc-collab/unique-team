@@ -11,7 +11,7 @@ export function FooterClosingRow() {
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}
-      className="flex flex-col gap-6 border-t border-white/10 pt-8 lg:flex-row lg:items-center lg:justify-between"
+      className="flex flex-col gap-6 pt-8 lg:flex-row lg:items-center lg:justify-between"
     >
       {/* Closing brand line */}
       <p className="text-[26px] font-serif leading-[1.25] text-white lg:whitespace-nowrap lg:text-[32px]">

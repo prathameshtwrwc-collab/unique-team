@@ -1,25 +1,67 @@
-import { useState, type UIEvent } from "react";
+import { useState, useEffect, useRef, useCallback, type UIEvent } from "react";
 import { services } from "../../data/services";
 import { ServiceImage } from "./ServiceImage";
 import { ServiceLink } from "./ServiceLink";
 
+const AUTO_INTERVAL = 4500;
+
 export function ServicesMobileCarousel() {
   const [current, setCurrent] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 
-  const handleScroll = (e: UIEvent<HTMLDivElement>) => {
+  const scrollTo = useCallback((index: number) => {
+    const container = containerRef.current;
+    if (!container) return;
+    const cards = container.children[0]?.children;
+    if (!cards || !cards[index]) return;
+    (cards[index] as HTMLElement).scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    setCurrent(index);
+  }, []);
+
+  const startAutoPlay = useCallback(() => {
+    stopAutoPlay();
+    timerRef.current = setInterval(() => {
+      setCurrent((prev) => {
+        const next = (prev + 1) % services.length;
+        const container = containerRef.current;
+        if (container) {
+          const cards = container.children[0]?.children;
+          if (cards?.[next]) {
+            (cards[next] as HTMLElement).scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+          }
+        }
+        return next;
+      });
+    }, AUTO_INTERVAL);
+  }, []);
+
+  const stopAutoPlay = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+  }, []);
+
+  useEffect(() => {
+    startAutoPlay();
+    return stopAutoPlay;
+  }, [startAutoPlay, stopAutoPlay]);
+
+  const handleScroll = useCallback((e: UIEvent<HTMLDivElement>) => {
     const container = e.currentTarget;
     const scrollPos = container.scrollLeft;
-    const cardWidth = container.children[0]?.clientWidth || 0;
+    const cardWidth = container.children[0]?.children[0]?.clientWidth || 0;
     const gap = 24;
     const newIndex = Math.round(scrollPos / (cardWidth + gap));
     if (newIndex !== current && newIndex >= 0 && newIndex < services.length) {
       setCurrent(newIndex);
     }
-  };
+    stopAutoPlay();
+    setTimeout(startAutoPlay, AUTO_INTERVAL);
+  }, [current, stopAutoPlay, startAutoPlay]);
 
   return (
     <div className="lg:hidden">
       <div
+        ref={containerRef}
         className="relative overflow-x-auto pb-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         onScroll={handleScroll}
       >
@@ -57,14 +99,8 @@ export function ServicesMobileCarousel() {
             key={i}
             type="button"
             aria-label={`Go to service ${i + 1}`}
-            onClick={() => {
-              const container = document.querySelector(".snap-x");
-              if (container) {
-                const cards = container.children;
-                (cards[i] as HTMLElement)?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-              }
-            }}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
+            onClick={() => { scrollTo(i); stopAutoPlay(); setTimeout(startAutoPlay, AUTO_INTERVAL); }}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
               i === current ? "w-8 bg-gold" : "w-1.5 bg-gold/30"
             }`}
           />

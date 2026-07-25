@@ -9,7 +9,6 @@ export const contactFormSchema = z.object({
   numberOfPositions: z.string().min(1, "Please select number of positions"),
   preferredTimeline: z.string().min(1, "Please select preferred timeline"),
   requirementDetails: z.string().min(20, "Please provide at least 20 characters").max(2000, "Maximum 2000 characters"),
-  botcheck: z.string().optional(),
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;

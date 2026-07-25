@@ -1,26 +1,18 @@
 import type { ContactFormData } from "./contactValidation";
 
-const FORM_ENDPOINT = "https://splitforms.com/api/submit";
-const ACCESS_KEY = "7bf1545a14b44ff8860b6195e93550cc";
+const FORM_ENDPOINT = "https://api.lazyforms.com/f/1bfa2b3d-cad5-4f78-bfbc-ad94be9c5808";
 
 export async function submitRequirement(data: ContactFormData): Promise<{ success: boolean; message: string }> {
-  const formData = new FormData();
-  formData.set("access_key", ACCESS_KEY);
-  formData.set("subject", "New Requirement Submission from " + data.companyName);
-
-  for (const [key, value] of Object.entries(data)) {
-    formData.set(key, value);
-  }
-
   const response = await fetch(FORM_ENDPOINT, {
     method: "POST",
-    body: formData,
-    headers: { Accept: "application/json" },
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
   });
 
-  const json = await response.json();
-
-  if (!json.success) {
+  if (!response.ok) {
     throw new Error("Submission failed. Please try again.");
   }
 

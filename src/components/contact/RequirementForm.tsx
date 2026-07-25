@@ -52,7 +52,6 @@ export function RequirementForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate aria-label="Submit your requirement form">
-      <input type="checkbox" className="hidden" {...register("botcheck")} />
       <div className="mb-7">
         <h3 className="text-[24px] font-serif leading-tight text-plum lg:text-[26px]">
           {contactData.form.title}

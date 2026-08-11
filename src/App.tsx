@@ -14,7 +14,7 @@ import { FinalCTASection } from "./components/final-cta/FinalCTASection";
 import { ContactSection } from "./components/contact/ContactSection";
 import { Footer } from "./components/footer/Footer";
 import { NavContext } from "./lib/NavContext";
-import { useLenis } from "./hooks/useLenis";
+import { useLenis, scrollTop } from "./hooks/useLenis";
 
 const sections = [
   "home", "about", "services", "industries", "process",
@@ -78,23 +78,20 @@ export default function App() {
 
   const isHome = activeSection === "home";
 
-  // Scroll to top whenever the active section changes (except for in-page within home)
+  // Scroll to top whenever the active section changes
   useEffect(() => {
-    if (activeSection !== "home") {
-      window.scrollTo(0, 0);
-    }
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        scrollTop(true);
+      });
+    });
   }, [activeSection]);
 
   const navigate = useCallback((section: string) => {
     if (!(sections as readonly string[]).includes(section)) return;
     setActiveSection(section as Section);
     window.location.hash = section;
-
-    if (section === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      window.scrollTo({ top: 0, behavior: "auto" });
-    }
+    scrollTop(true);
   }, []);
 
   useEffect(() => {

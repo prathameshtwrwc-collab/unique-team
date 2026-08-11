@@ -1,6 +1,20 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
+let _lenis: Lenis | null = null;
+
+export function getLenis() {
+  return _lenis;
+}
+
+export function scrollTop(immediate = true) {
+  if (_lenis) {
+    _lenis.scrollTo(0, { immediate, force: true });
+  } else {
+    window.scrollTo(0, 0);
+  }
+}
+
 export function useLenis() {
   useEffect(() => {
     const prefersReduced = window.matchMedia(
@@ -14,6 +28,7 @@ export function useLenis() {
       touchMultiplier: 1.3,
       anchors: { offset: -90 },
     });
+    _lenis = lenis;
 
     let rafId = 0;
     const raf = (time: number) => {
@@ -25,6 +40,7 @@ export function useLenis() {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      _lenis = null;
     };
   }, []);
 }

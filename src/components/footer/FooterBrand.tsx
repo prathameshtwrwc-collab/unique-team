@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { footerData } from "../../data/footer";
-import { FooterSocialLinks } from "./FooterSocialLinks";
 import { fadeUp, defaultViewport } from "../../lib/animations";
 
 function Logo() {
@@ -52,8 +51,6 @@ export function FooterBrand() {
         <p>{footerData.brand.website}</p>
         <p className="text-[14px] leading-[1.5] text-white/70">{footerData.brand.office}</p>
       </motion.div>
-
-      <FooterSocialLinks />
     </div>
   );
 }

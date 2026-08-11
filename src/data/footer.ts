@@ -14,7 +14,7 @@ export const footerData = {
     phone: "+91 8422976666",
     email: "account@uniqueteam.in",
     website: "www.uniqueteam.in",
-    office: "FA 18 First Floor Lake City Mall Kapurbawadi Junction Thane(W) 400607 Mumbai, India",
+    office: "High Street Mall 3B 45 Agra Road Kapurbawadi Thane West 400607",
   },
   linkGroups: [
     {
@@ -51,11 +51,6 @@ export const footerData = {
         { label: "Education", href: "#industries" },
       ],
     },
-  ],
-  social: [
-    { label: "LinkedIn", href: "#", ariaLabel: "Visit UniqueHR on LinkedIn" },
-    { label: "Instagram", href: "#", ariaLabel: "Visit UniqueHR on Instagram" },
-    { label: "Facebook", href: "#", ariaLabel: "Visit UniqueHR on Facebook" },
   ],
   closingLine: {
     partOne: "Your growth.",

@@ -10,7 +10,7 @@ export const contactData = {
     phone: { label: "Phone", value: "+91 8422976666", href: "tel:+918422976666" },
     email: { label: "Email", value: "account@uniqueteam.in", href: "mailto:account@uniqueteam.in" },
     website: { label: "Website", value: "www.uniqueteam.in", href: "https://www.uniqueteam.in" },
-    office: { label: "Office", value: "FA 18 First Floor Lake City Mall Kapurbawadi Junction Thane(W) 400607 Mumbai, India", href: "#" },
+    office: { label: "Office", value: "High Street Mall 3B 45 Agra Road Kapurbawadi Thane West 400607", href: "#" },
     hours: { label: "Business Hours", value: "Mon–Fri, 9 AM – 6 PM", href: "#" },
   },
   responseNote: "We will review your requirement and respond using the contact details provided.",

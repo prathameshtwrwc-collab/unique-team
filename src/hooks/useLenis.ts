@@ -10,9 +10,10 @@ export function getLenis() {
 export function scrollTop(immediate = true) {
   if (_lenis) {
     _lenis.scrollTo(0, { immediate, force: true });
-  } else {
-    window.scrollTo(0, 0);
   }
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 }
 
 export function useLenis() {

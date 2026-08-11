@@ -48,6 +48,7 @@ function SectionWrapper({ section, children }: { section: string; children: Reac
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      className="min-h-[calc(100vh-116px)]"
     >
       {children}
     </motion.div>
@@ -80,11 +81,12 @@ export default function App() {
 
   // Scroll to top whenever the active section changes
   useEffect(() => {
-    requestAnimationFrame(() => {
+    const id = setTimeout(() => {
       requestAnimationFrame(() => {
         scrollTop(true);
       });
-    });
+    }, 60);
+    return () => clearTimeout(id);
   }, [activeSection]);
 
   const navigate = useCallback((section: string) => {

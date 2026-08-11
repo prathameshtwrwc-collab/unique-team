@@ -78,12 +78,22 @@ export default function App() {
 
   const isHome = activeSection === "home";
 
+  // Scroll to top whenever the active section changes (except for in-page within home)
+  useEffect(() => {
+    if (activeSection !== "home") {
+      window.scrollTo(0, 0);
+    }
+  }, [activeSection]);
+
   const navigate = useCallback((section: string) => {
     if (!(sections as readonly string[]).includes(section)) return;
     setActiveSection(section as Section);
     window.location.hash = section;
+
     if (section === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "auto" });
     }
   }, []);
 

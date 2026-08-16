@@ -16,7 +16,7 @@ export function ComplianceTrustPanel() {
   
   return (
     <motion.aside
-      variants={fadeUp(1.6, 18, 0.7)}
+      variants={fadeUp(0.5, 18, 0.45)}
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}

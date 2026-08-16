@@ -7,7 +7,7 @@ export function FooterClosingRow() {
 
   return (
     <motion.div
-      variants={fadeUp(1.2, 14, 0.6)}
+      variants={fadeUp(0.5, 14, 0.45)}
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}

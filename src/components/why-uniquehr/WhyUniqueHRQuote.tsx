@@ -5,7 +5,7 @@ import { fadeUp, defaultViewport } from "../../lib/animations";
 export function WhyUniqueHRQuote() {
   return (
     <motion.blockquote
-      variants={fadeUp(1.4, 18, 0.65)}
+      variants={fadeUp(0.5, 18, 0.45)}
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}

@@ -70,7 +70,7 @@ export function WhyUniqueHRBenefitRow({ benefit, index }: { benefit: Benefit; in
       whileInView="visible"
       whileHover={{ x: 4, y: -2 }}
       viewport={defaultViewport}
-      transition={{ delay: 1.6 + index * 0.1, type: "spring", stiffness: 200, damping: 20 }}
+      transition={{ delay: 0.3 + index * 0.08, type: "spring", stiffness: 200, damping: 20 }}
       className={`group relative flex items-start gap-4 rounded-[14px] border border-[rgba(46,21,87,0.1)] px-5 py-[19px] transition-all duration-300 hover:border-[rgba(46,21,87,0.2)] ${benefit.width} ${
         benefit.bg === "lilac" ? "bg-lilac-pale" : "bg-white"
       }`}

@@ -7,7 +7,7 @@ export const EASE_SPRING = { type: "spring" as const, stiffness: 160, damping: 1
 export const defaultViewport = { once: true, amount: 0.12 as const };
 export const headlineViewport = { once: true, amount: 0 as const };
 
-export const fadeIn = (delay = 0, duration = 0.4): Variants => ({
+export const fadeIn = (delay = 0, duration = 0.28): Variants => ({
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -15,7 +15,7 @@ export const fadeIn = (delay = 0, duration = 0.4): Variants => ({
   },
 });
 
-export const fadeUp = (delay = 0, distance = 14, duration = 0.5): Variants => ({
+export const fadeUp = (delay = 0, distance = 14, duration = 0.35): Variants => ({
   hidden: { opacity: 0, y: distance },
   visible: {
     opacity: 1,
@@ -24,7 +24,7 @@ export const fadeUp = (delay = 0, distance = 14, duration = 0.5): Variants => ({
   },
 });
 
-export const fadeDown = (delay = 0, duration = 0.4): Variants => ({
+export const fadeDown = (delay = 0, duration = 0.28): Variants => ({
   hidden: { opacity: 0, y: -6 },
   visible: {
     opacity: 1,
@@ -33,7 +33,7 @@ export const fadeDown = (delay = 0, duration = 0.4): Variants => ({
   },
 });
 
-export const fadeUpStrong = (delay = 0, distance = 28, duration = 0.55): Variants => ({
+export const fadeUpStrong = (delay = 0, distance = 28, duration = 0.38): Variants => ({
   hidden: { opacity: 0, y: distance },
   visible: {
     opacity: 1,
@@ -42,7 +42,7 @@ export const fadeUpStrong = (delay = 0, distance = 28, duration = 0.55): Variant
   },
 });
 
-export const fadeInLeft = (delay = 0, distance = 24, duration = 0.55): Variants => ({
+export const fadeInLeft = (delay = 0, distance = 24, duration = 0.38): Variants => ({
   hidden: { opacity: 0, x: -distance },
   visible: {
     opacity: 1,
@@ -51,7 +51,7 @@ export const fadeInLeft = (delay = 0, distance = 24, duration = 0.55): Variants 
   },
 });
 
-export const fadeInRight = (delay = 0, distance = 24, duration = 0.55): Variants => ({
+export const fadeInRight = (delay = 0, distance = 24, duration = 0.38): Variants => ({
   hidden: { opacity: 0, x: distance },
   visible: {
     opacity: 1,
@@ -65,7 +65,7 @@ export const lineReveal = (delay = 0): Variants => ({
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, delay, ease: EASE_OUT },
+    transition: { duration: 0.38, delay, ease: EASE_OUT },
   },
 });
 
@@ -74,7 +74,7 @@ export const scaleIn = (delay = 0): Variants => ({
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.55, delay, ease: EASE_OUT },
+    transition: { duration: 0.38, delay, ease: EASE_OUT },
   },
 });
 
@@ -83,7 +83,7 @@ export const clipReveal = (delay = 0): Variants => ({
   visible: {
     opacity: 1,
     clipPath: "inset(0% 0% 0% 0%)",
-    transition: { duration: 0.7, delay, ease: EASE_CINEMATIC },
+    transition: { duration: 0.5, delay, ease: EASE_CINEMATIC },
   },
 });
 
@@ -91,7 +91,7 @@ export const clipRevealHorizontal = (delay = 0): Variants => ({
   hidden: { clipPath: "inset(0% 100% 0% 0%)" },
   visible: {
     clipPath: "inset(0% 0% 0% 0%)",
-    transition: { duration: 0.75, delay, ease: EASE_CINEMATIC },
+    transition: { duration: 0.5, delay, ease: EASE_CINEMATIC },
   },
 });
 
@@ -111,7 +111,7 @@ export const imageReveal = (delay = 0): Variants => ({
     scale: 1,
     filter: "blur(0px)",
     opacity: 1,
-    transition: { duration: 0.85, delay, ease: EASE_CINEMATIC },
+    transition: { duration: 0.5, delay, ease: EASE_CINEMATIC },
   },
 });
 
@@ -120,6 +120,6 @@ export const zoomIn = (delay = 0): Variants => ({
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.6, delay, ease: EASE_CINEMATIC },
+    transition: { duration: 0.4, delay, ease: EASE_CINEMATIC },
   },
 });

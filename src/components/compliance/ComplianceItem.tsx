@@ -109,7 +109,7 @@ export function ComplianceItem({ item, index }: ComplianceItemProps) {
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}
-      transition={{ delay: 1.2 + index * 0.08 }}
+      transition={{ delay: 0.2 + index * 0.06 }}
       whileHover={{ x: 4 }}
       className="group border-b border-[rgba(46,21,87,0.1)] pb-6 transition-all duration-300 hover:border-[rgba(46,21,87,0.16)]"
       aria-label={item.ariaLabel}

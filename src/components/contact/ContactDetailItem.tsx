@@ -74,7 +74,7 @@ export function ContactDetailItem({ icon, label, value, href, index }: ContactDe
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}
-      transition={{ delay: 1.2 + index * 0.08 }}
+      transition={{ delay: 0.2 + index * 0.06 }}
       className="border-b border-[rgba(46,21,87,0.1)] py-4"
     >
       <div className="flex items-start gap-4">

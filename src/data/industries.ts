@@ -107,4 +107,16 @@ export const industries: Industry[] = [
     icon: "graduation",
     altText: "Education professionals supporting learning and development",
   },
+  {
+    id: "rmc-plant",
+    number: "08",
+    abbreviation: "RMC",
+    title: "RMC Plant",
+    campaignLine: "Talent that keeps construction moving.",
+    description: "Plant operators, batching technicians, quality control professionals, drivers, mechanics and site-support teams. We connect RMC businesses with dependable talent across plant operations, production, logistics and quality assurance — helping maintain consistent output, safe operations and timely concrete delivery.",
+    roles: ["Plant Operators", "Quality Control Technicians", "RMC Drivers", "Maintenance Technicians", "Production Supervisors"],
+    image: "/images/RMCX.jpg",
+    icon: "mixer",
+    altText: "RMC plant with batching machinery and concrete delivery workforce",
+  },
 ];

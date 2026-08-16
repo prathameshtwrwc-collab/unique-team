@@ -62,6 +62,16 @@ function ServiceBellIcon() {
   );
 }
 
+function MixerIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 20h18M5 20V8h4l3-4v14M19 8v8l-5 4v-8l5-4z" stroke="#D6A03E" />
+      <circle cx="12" cy="10" r="1.5" />
+      <path d="M9 14h6M10 17h4" />
+    </svg>
+  );
+}
+
 function GraduationIcon() {
   return (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -78,6 +88,7 @@ const iconMap: Record<string, () => ReactElement> = {
   route: RouteIcon,
   building: BuildingIcon,
   "service-bell": ServiceBellIcon,
+  mixer: MixerIcon,
   graduation: GraduationIcon,
 };
 

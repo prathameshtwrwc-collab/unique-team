@@ -11,7 +11,7 @@ export interface FooterLinkGroupData {
 export const footerData = {
   brand: {
     statement: "People placed with purpose. We help businesses hire, onboard and manage professionals who fit the work, the culture and the ambition behind it.",
-    phone: "+91 8422976666",
+    phone: "+91 9653107131",
     email: "account@uniqueteam.in",
     website: "www.uniqueteam.in",
     office: "High Street Mall 3B 45 Agra Road Kapurbawadi Thane West 400607",

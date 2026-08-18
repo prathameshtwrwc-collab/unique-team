@@ -7,7 +7,7 @@ export const contactData = {
   supportingCopy: "Share a few details about the roles and workforce support you need. Our team will review the requirement and help identify the right next step.",
   contactIntro: "Prefer to speak directly? Reach our team using the contact details below.",
   details: {
-    phone: { label: "Phone", value: "+91 8422976666", href: "tel:+918422976666" },
+    phone: { label: "Phone", value: "+91 9653107131", href: "tel:+919653107131" },
     email: { label: "Email", value: "account@uniqueteam.in", href: "mailto:account@uniqueteam.in" },
     website: { label: "Website", value: "www.uniqueteam.in", href: "https://www.uniqueteam.in" },
     office: { label: "Office", value: "High Street Mall 3B 45 Agra Road Kapurbawadi Thane West 400607", href: "#" },

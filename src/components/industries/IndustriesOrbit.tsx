@@ -12,7 +12,7 @@ export function IndustriesOrbit({ activeIndustry, onSelectIndustry }: Industries
   
   // Orbit configuration - reduced by another ~4% for tighter composition
   const radius = 338; // Desktop orbit radius (reduced from 356)
-  const angles = [-90, -56, -22, 12, 45, 78, 112, 146, 180]; // 9 positions around circle
+  const angles = [-70, -30, 10, 50, 90, 130, 170, 210, 250]; // 9 positions evenly spaced 40° apart
 
   return (
     <div className="relative flex h-[780px] w-full items-center justify-center lg:h-[860px]">

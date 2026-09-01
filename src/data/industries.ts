@@ -119,4 +119,16 @@ export const industries: Industry[] = [
     icon: "mixer",
     altText: "RMC plant with batching machinery and concrete delivery workforce",
   },
+  {
+    id: "vehicle-rentals",
+    number: "09",
+    abbreviation: "VR",
+    title: "Vehicle Rentals",
+    campaignLine: "Vehicles that keep work moving.",
+    description: "Vehicle rentals help businesses get the vehicles they need without buying them. This industry serves construction, transport, factories, events, and corporate needs. Common vehicles include trucks, tempos, JCBs, tippers, cranes, buses, and cars. Vehicles can be rented for a day, month, project, or longer period. Businesses can choose vehicles with or without drivers. Well-maintained vehicles and reliable service are important for smooth work.",
+    roles: ["Vehicle Rentals"],
+    image: "/images/rentals.png",
+    icon: "vehicle-rental",
+    altText: "Construction vehicles and commercial fleet available for rental",
+  },
 ];

@@ -81,6 +81,18 @@ function GraduationIcon() {
   );
 }
 
+function VehicleRentalIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="1" y="10" width="15" height="8" rx="2" />
+      <circle cx="5" cy="18" r="1.5" />
+      <circle cx="12" cy="18" r="1.5" />
+      <path d="M16 14h3l2 4v2h-5v-6z" stroke="#D6A03E" />
+      <path d="M5 10V7h4l2 3" />
+    </svg>
+  );
+}
+
 const iconMap: Record<string, () => ReactElement> = {
   circuit: CircuitIcon,
   "heart-cross": HeartCrossIcon,
@@ -89,6 +101,7 @@ const iconMap: Record<string, () => ReactElement> = {
   building: BuildingIcon,
   "service-bell": ServiceBellIcon,
   mixer: MixerIcon,
+  "vehicle-rental": VehicleRentalIcon,
   graduation: GraduationIcon,
 };
 

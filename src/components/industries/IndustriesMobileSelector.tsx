@@ -3,7 +3,7 @@ import { industries } from "../../data/industries";
 import { IndustryCentralVisual } from "./IndustryCentralVisual";
 import { IndustryDetails } from "./IndustryDetails";
 
-const AUTO_INTERVAL = 5000;
+const AUTO_INTERVAL = 20000;
 
 interface IndustriesMobileSelectorProps {
   activeIndustry: string;
